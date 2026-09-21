@@ -270,18 +270,27 @@ ul li a:hover {
     transition: transform 0.3s ease;
 }
 
-.hangulat-kartya.aktiv .chevron {
+.hangulat-kartya.aktiv > .kartya-fejlec .chevron {
     transform: rotate(180deg);
 }
 
+/* Hangulat-kártya lenyíló tartalma: rugalmas magasságú grid-trükk,
+   így nincs szükség JS-es magasságszámolásra, és a benne nyíló
+   előadó-listák sem törik el a külső kártya animációját. */
 .kartya-tartalom {
-    max-height: 0;
+    display: grid;
+    grid-template-rows: 0fr;
     overflow: hidden;
-    transition: max-height 0.35s ease, margin-top 0.35s ease;
+    transition: grid-template-rows 0.4s ease, margin-top 0.4s ease;
+}
+
+.kartya-tartalom-belso {
+    overflow: hidden;
+    min-height: 0;
 }
 
 .hangulat-kartya.aktiv .kartya-tartalom {
-    max-height: 280px;
+    grid-template-rows: 1fr;
     margin-top: 20px;
 }
 
@@ -376,73 +385,133 @@ footer {
 .eloadok-lista {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
 }
 
+/* Egy előadó sora: a fejrész (kép + név) mindig látszik,
+   a zenék csak rákattintva jelennek meg, kártyánként külön nyitva/zárva. */
 .eloado {
     display: flex;
-    align-items: center;
-    gap: 14px;
-    width: 100%;
-    padding: 8px;
+    flex-direction: column;
     border-radius: 12px;
     background: rgba(255, 230, 0, 0.04);
-    transition: background 0.2s ease, transform 0.2s ease;
+    transition: background 0.2s ease;
+    overflow: hidden;
 }
 
 .eloado:hover {
     background: rgba(255, 230, 0, 0.1);
-    transform: translateX(4px);
 }
 
-.eloado img {
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
-    border-radius: 10px;
-    flex-shrink: 0;
-}
-
-.eloado span {
-    font-family: var(--body);
-    font-size: 15px;
-    font-weight: 700;
-    color: #fff;
-}
-
-.eloadok-lista {
+.eloado-sor {
     display: flex;
-    flex-direction: column;
-    gap: 12px;
+    align-items: center;
+    gap: 10px;
+    padding: 8px;
 }
 
-.zenek {
+.eloado-fejlec {
     display: flex;
     align-items: center;
     gap: 14px;
-    width: 100%;
-    padding: 8px;
-    border-radius: 12px;
-    background: rgba(255, 230, 0, 0.04);
-    transition: background 0.2s ease, transform 0.2s ease;
+    flex: 1 1 auto;
+    min-width: 0;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    text-align: left;
 }
 
-.zenek:hover {
-    background: rgba(255, 230, 0, 0.1);
-    transform: translateX(4px);
-}
-
-.zenek img {
-    width: 60px;
-    height: 60px;
+.eloado-fejlec img {
+    width: 50px;
+    height: 50px;
     object-fit: cover;
     border-radius: 10px;
     flex-shrink: 0;
 }
 
-.zenek span {
+.eloado-nev {
+    flex: 1 1 auto;
     font-family: var(--body);
     font-size: 15px;
     font-weight: 700;
     color: #fff;
+}
+
+.eloado-fejlec .chevron {
+    color: var(--yellow);
+    font-size: 12px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.eloado.aktiv .eloado-fejlec .chevron {
+    transform: rotate(180deg);
+}
+
+.spotify-ikon {
+    flex-shrink: 0;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.4);
+    color: var(--yellow);
+    font-size: 15px;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.spotify-ikon:hover {
+    background: var(--yellow);
+    color: #000;
+    transform: scale(1.08);
+}
+
+.eloado-tartalom {
+    display: grid;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+    transition: grid-template-rows 0.3s ease;
+}
+
+.eloado-tartalom-belso {
+    overflow: hidden;
+    min-height: 0;
+}
+
+.eloado.aktiv .eloado-tartalom {
+    grid-template-rows: 1fr;
+}
+
+.zenek-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding: 2px 14px 14px 78px;
+}
+
+.zene {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--body);
+    font-size: 13.5px;
+    color: #cfcfcf;
+}
+
+.zene i {
+    color: var(--shade);
+    font-size: 10px;
+    flex-shrink: 0;
+}
+
+@media (max-width: 680px) {
+    .zenek-lista {
+        padding-left: 14px;
+    }
 }
