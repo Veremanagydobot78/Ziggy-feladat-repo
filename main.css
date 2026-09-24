@@ -8,39 +8,35 @@
     --offset: 6px;
     --display: "Unbounded", "Arial Black", system-ui, sans-serif;
     --body: "DM Sans", "Segoe UI", system-ui, sans-serif;
-  }
+}
 
 body {
-  background-color: var(--bg);
-  background-image: radial-gradient(rgba(255, 230, 0, 0.16) 1.5px, transparent 1.6px);
-  background-size: 24px 24px;
+    background-color: var(--bg);
+    background-image: radial-gradient(rgba(255, 230, 0, 0.16) 1.5px, transparent 1.6px);
+    background-size: 24px 24px;
 }
-
 
 tbody tr {
-  --c: var(--yellow);
+    --c: var(--yellow);
 }
-
 
 tbody th,
 tbody td {
-  background: var(--c);
+    background: var(--c);
 }
 
-
-tbody tr:hover > {
-  background: #fff36b;
+tbody tr:hover>* {
+    background: #fff36b;
 }
-
 
 @media (max-width: 680px) {
-  tbody tr {
-    background: var(--c);
-  }
+    tbody tr {
+        background: var(--c);
+    }
 
-  tbody tr:hover {
-    background: #fff36b;
-  }
+    tbody tr:hover {
+        background: #fff36b;
+    }
 }
 
 .container {
@@ -49,14 +45,12 @@ tbody tr:hover > {
     height: auto;
 }
 
-
 nav {
     width: 95%;
     margin: 10px auto 0 auto;
     padding: 15px 25px;
     background: none;
 }
-
 
 #menu {
     display: flex;
@@ -89,7 +83,6 @@ nav {
     background-color: #333;
     font-size: 15px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-
 }
 
 #menu ul li a:hover {
@@ -97,7 +90,6 @@ nav {
     color: black;
     box-shadow: 0 0 10px #FFD700;
 }
-
 
 .logo {
     width: 62px;
@@ -108,9 +100,7 @@ nav {
     justify-content: center;
     flex-shrink: 0;
     background: radial-gradient(circle at 32% 28%, #2b2b2b 0%, #050505 75%);
-    box-shadow:
-        0 12px 22px rgba(0, 0, 0, 0.55),
-        inset 0 1px 1px rgba(255, 255, 255, 0.06);
+    box-shadow: 0 12px 22px rgba(0, 0, 0, 0.55), inset 0 1px 1px rgba(255, 255, 255, 0.06);
 }
 
 .logo img {
@@ -119,7 +109,6 @@ nav {
     display: block;
     filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.5));
 }
-
 
 .banner {
     position: relative;
@@ -144,8 +133,17 @@ nav {
 }
 
 @keyframes fenyPulzalas {
-    0%, 100% { opacity: 0.5; transform: scale(1); }
-    50%      { opacity: 1;   transform: scale(1.08); }
+
+    0%,
+    100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.08);
+    }
 }
 
 .banner-dekor {
@@ -198,7 +196,6 @@ ul li a:hover {
     color: #fff;
     text-shadow: 0 0 6px #fff;
 }
-
 
 .hangulatok-grid {
     display: flex;
@@ -270,13 +267,11 @@ ul li a:hover {
     transition: transform 0.3s ease;
 }
 
-.hangulat-kartya.aktiv > .kartya-fejlec .chevron {
+.hangulat-kartya.aktiv>.kartya-fejlec .chevron {
     transform: rotate(180deg);
 }
 
-/* Hangulat-kártya lenyíló tartalma: rugalmas magasságú grid-trükk,
-   így nincs szükség JS-es magasságszámolásra, és a benne nyíló
-   előadó-listák sem törik el a külső kártya animációját. */
+
 .kartya-tartalom {
     display: grid;
     grid-template-rows: 0fr;
@@ -336,12 +331,10 @@ ul li a:hover {
     font-size: 11px;
 }
 
-
 footer {
     text-align: center;
     padding: 5px 0;
     font-size: 0.9em;
-    color: #a8a8a8;
     background: linear-gradient(160deg, #1c1c1c 0%, #101010 100%);
     border-top: 1px solid #3d3d3d;
     border-radius: 8px;
@@ -388,8 +381,7 @@ footer {
     gap: 10px;
 }
 
-/* Egy előadó sora: a fejrész (kép + név) mindig látszik,
-   a zenék csak rákattintva jelennek meg, kártyánként külön nyitva/zárva. */
+
 .eloado {
     display: flex;
     flex-direction: column;
@@ -514,4 +506,150 @@ footer {
     .zenek-lista {
         padding-left: 14px;
     }
+}
+
+
+.marka {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.marka-nev {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: 24px;
+    color: var(--yellow);
+    letter-spacing: -0.5px;
+}
+
+.banner-marka {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--yellow);
+    color: #0a0a0a;
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 14px;
+    padding: 7px 16px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.banner .tagek {
+    margin-top: 22px;
+}
+
+.banner-gomb {
+    margin-top: 24px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--yellow);
+    color: #0a0a0a;
+    border: 0;
+    border-radius: 30px;
+    padding: 12px 22px;
+    font-family: var(--body);
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.banner-gomb:hover {
+    background: var(--yellow-hover);
+    transform: translateY(-2px);
+}
+
+.banner-gomb:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+}
+
+.szekcio-cim {
+    max-width: 1250px;
+    margin: 0 auto 20px auto;
+    padding: 0 10px;
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 26px;
+    color: var(--yellow);
+}
+
+.kartya-blokk .tagek {
+    margin-bottom: 14px;
+}
+
+
+.lepesek {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1250px;
+    margin: 0 auto 40px auto;
+    padding: 0 10px;
+}
+
+.lepes {
+    flex: 1 1 300px;
+    max-width: calc(33.333% - 14px);
+    background: linear-gradient(160deg, #1c1c1c 0%, #101010 100%);
+    border: 1px solid rgba(255, 230, 0, 0.15);
+    border-radius: 20px;
+    padding: 24px;
+}
+
+.lepes .ikon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #000;
+    color: var(--yellow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    margin-bottom: 16px;
+}
+
+.lepes h3 {
+    margin: 0 0 8px 0;
+    font-family: var(--body);
+    font-weight: 700;
+    font-size: 19px;
+    color: #fff;
+}
+
+.lepes p {
+    margin: 0;
+    font-family: var(--body);
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: #cfcfcf;
+}
+
+@media (max-width: 900px) {
+    .lepes {
+        max-width: calc(50% - 10px);
+    }
+}
+
+@media (max-width: 680px) {
+    .lepes {
+        max-width: 100%;
+    }
+
+    .szekcio-cim {
+        font-size: 21px;
+    }
+
+    .marka-nev {
+        font-size: 19px;
+    }
+}
+
+.eloado-fejlec img {
+    background: #000;
 }

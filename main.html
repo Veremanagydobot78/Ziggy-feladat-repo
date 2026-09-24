@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 
 <head>
     <meta charset="UTF-8">
@@ -11,11 +11,10 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="main.css">
-    <title>Hangulatokból lejátszási lista</title>
+    <title>Hangoló – Hangulatokból lejátszási lista</title>
 </head>
 
 <body>
-
     <nav>
         <div id="menu">
             <ul>
@@ -23,8 +22,9 @@
                 <li><a href="">Stílusok</a></li>
                 <li><a href="">Táblázat</a></li>
             </ul>
-            <div class="logo">
-                <img src="logo.png" alt="logo">
+            <div class="marka">
+                <span class="marka-nev">Hangoló</span>
+                <div class="logo"><img src="logo.png" alt="Hangoló logó"></div>
             </div>
         </div>
     </nav>
@@ -33,14 +33,22 @@
         <header class="banner">
             <span class="banner-dekor" aria-hidden="true"><i class="fa-solid fa-headphones-simple"></i></span>
             <div class="banner-tartalom">
+                <span class="banner-marka"><i class="fa-solid fa-headphones-simple"></i>Hangoló</span>
                 <h1>Zenei hangulatok.</h1>
                 <p class="alcim">Válaszd ki a hangulatod, kattints rá, és megkapod hozzá a stílust, a hallgatási
                     helyzeteket, és pár zenei javaslatot.</p>
+                <div class="tagek">
+                    <span class="tag"><i class="fa-solid fa-face-smile"></i>6 hangulat</span>
+                    <span class="tag"><i class="fa-solid fa-microphone"></i>18 előadó</span>
+                    <span class="tag"><i class="fa-solid fa-music"></i>90 zene</span>
+                </div>
+                <button class="banner-gomb" id="veletlen" type="button"><i class="fa-solid fa-shuffle"></i>Válassz nekem
+                    hangulatot</button>
             </div>
         </header>
 
+        <h2 class="szekcio-cim" id="hangulatok">Válassz hangulatot</h2>
         <section class="hangulatok-grid">
-
             <div class="hangulat-kartya">
                 <button class="kartya-fejlec" type="button" aria-expanded="false">
                     <span class="ikon"><i class="fa-solid fa-cloud"></i></span>
@@ -52,21 +60,27 @@
                         <div class="kartya-blokk">
                             <div class="mondat">Ha nyugodt, laza és kellemes hangulatú zenékre és előadókra vágysz.
                             </div>
+                            <span class="blokk-cim">Stílusok</span>
+                            <div class="tagek"><span class="tag"><i class="fa-solid fa-compact-disc"></i>Boom
+                                    bap</span><span class="tag"><i
+                                        class="fa-solid fa-compact-disc"></i>Reggae</span><span class="tag"><i
+                                        class="fa-solid fa-compact-disc"></i>Neo soul</span></div>
+                            <span class="blokk-cim">Mikor hallgasd?</span>
+                            <div class="tagek"><span class="tag"><i class="fa-solid fa-clock"></i>Esti
+                                    pihenés</span><span class="tag"><i class="fa-solid fa-clock"></i>Séta</span><span
+                                    class="tag"><i class="fa-solid fa-clock"></i>Reggeli kávé</span></div>
                             <span class="blokk-cim">Előadók</span>
                             <div class="eloadok-lista">
-
                                 <div class="eloado">
                                     <div class="eloado-sor">
-                                        <button class="eloado-fejlec" type="button" aria-expanded="false">
-                                            <img src="pics/j cole.png" alt="j.cole">
-                                            <span class="eloado-nev">J.Cole</span>
-                                            <span class="chevron"><i class="fa-solid fa-chevron-down"></i></span>
-                                        </button>
+                                        <button class="eloado-fejlec" type="button" aria-expanded="false"><img
+                                                src="pics/j cole.png" alt="j.cole"><span
+                                                class="eloado-nev">J.Cole</span><span class="chevron"><i
+                                                    class="fa-solid fa-chevron-down"></i></span></button>
                                         <a class="spotify-ikon"
-                                            href="https://open.spotify.com/artist/6l3HvQ5sa6mXTsMTB19rO5?si=To37jLhWRuCMLexebb0R3g"
-                                            target="_blank" aria-label="J.Cole megnyitása Spotify-on">
-                                            <i class="fa-brands fa-spotify"></i>
-                                        </a>
+                                            href="https://open.spotify.com/artist/6l3HvQ5sa6mXTsMTB19rO5"
+                                            target="_blank" rel="noopener" aria-label="J.Cole megnyitása Spotify-on"><i
+                                                class="fa-brands fa-spotify"></i></a>
                                     </div>
                                     <div class="eloado-tartalom">
                                         <div class="eloado-tartalom-belso">
@@ -85,76 +99,69 @@
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="eloado">
                                     <div class="eloado-sor">
-                                        <button class="eloado-fejlec" type="button" aria-expanded="false">
-                                            <img src="pics/lauryn hill.png" alt="lauryn hill">
-                                            <span class="eloado-nev">Lauryn Hill</span>
-                                            <span class="chevron"><i class="fa-solid fa-chevron-down"></i></span>
-                                        </button>
+                                        <button class="eloado-fejlec" type="button" aria-expanded="false"><img
+                                                src="pics/lauryn hill.png" alt="lauryn hill"><span
+                                                class="eloado-nev">Lauryn Hill</span><span class="chevron"><i
+                                                    class="fa-solid fa-chevron-down"></i></span></button>
                                         <a class="spotify-ikon"
-                                            href="https://open.spotify.com/artist/2Mu5NfyYm8n5iTomuKAEHl?si=HO3rbm-hRFuMTGrzfxUjMg"
-                                            target="_blank" aria-label="Lauryn Hill megnyitása Spotify-on">
-                                            <i class="fa-brands fa-spotify"></i>
-                                        </a>
+                                            href="https://open.spotify.com/artist/2Mu5NfyYm8n5iTomuKAEHl"
+                                            target="_blank" rel="noopener"
+                                            aria-label="Lauryn Hill megnyitása Spotify-on"><i
+                                                class="fa-brands fa-spotify"></i></a>
                                     </div>
                                     <div class="eloado-tartalom">
                                         <div class="eloado-tartalom-belso">
                                             <div class="zenek-lista">
-                                                <div class="zene"><i class="fa-solid fa-music"></i><span>Doo Wop
-                                                        (That Thing)</span></div>
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>Doo Wop (That
+                                                        Thing)</span></div>
                                                 <div class="zene"><i
-                                                        class="fa-solid fa-music"></i><span>Ex-Factor</span>
+                                                        class="fa-solid fa-music"></i><span>Ex-Factor</span></div>
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>To Zion</span>
                                                 </div>
-                                                <div class="zene"><i class="fa-solid fa-music"></i><span>To
-                                                        Zion</span></div>
-                                                <div class="zene"><i class="fa-solid fa-music"></i><span>Everything
-                                                        Is Everything</span></div>
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>Everything Is
+                                                        Everything</span></div>
                                                 <div class="zene"><i class="fa-solid fa-music"></i><span>Lost
                                                         Ones</span></div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="eloado">
                                     <div class="eloado-sor">
-                                        <button class="eloado-fejlec" type="button" aria-expanded="false">
-                                            <img src="pics/Bob-Marley.png" alt="bob marley">
-                                            <span class="eloado-nev">Bob Marley</span>
-                                            <span class="chevron"><i class="fa-solid fa-chevron-down"></i></span>
-                                        </button>
+                                        <button class="eloado-fejlec" type="button" aria-expanded="false"><img
+                                                src="pics/Bob-Marley.png" alt="bob marley"><span class="eloado-nev">Bob
+                                                Marley</span><span class="chevron"><i
+                                                    class="fa-solid fa-chevron-down"></i></span></button>
                                         <a class="spotify-ikon"
-                                            href="https://open.spotify.com/artist/2QsynagSdAqZj3U9HgDzjD?si=OOA03QitTL6slLL_wUCVHA"
-                                            target="_blank" aria-label="Bob Marley megnyitása Spotify-on">
-                                            <i class="fa-brands fa-spotify"></i>
-                                        </a>
+                                            href="https://open.spotify.com/artist/2QsynagSdAqZj3U9HgDzjD"
+                                            target="_blank" rel="noopener"
+                                            aria-label="Bob Marley megnyitása Spotify-on"><i
+                                                class="fa-brands fa-spotify"></i></a>
                                     </div>
                                     <div class="eloado-tartalom">
                                         <div class="eloado-tartalom-belso">
                                             <div class="zenek-lista">
-                                                <div class="zene"><i class="fa-solid fa-music"></i><span>Three
-                                                        Little Birds</span></div>
-                                                <div class="zene"><i class="fa-solid fa-music"></i><span>No Woman,
-                                                        No Cry</span></div>
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>Three Little
+                                                        Birds</span></div>
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>No Woman, No
+                                                        Cry</span></div>
                                                 <div class="zene"><i class="fa-solid fa-music"></i><span>Redemption
                                                         Song</span></div>
                                                 <div class="zene"><i class="fa-solid fa-music"></i><span>Is This
                                                         Love</span></div>
-                                                <div class="zene"><i class="fa-solid fa-music"></i><span>One
-                                                        Love</span></div>
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>One Love</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
             <div class="hangulat-kartya">
                 <button class="kartya-fejlec" type="button" aria-expanded="false">
                     <span class="ikon"><i class="fa-solid fa-fire"></i></span>
@@ -166,21 +173,28 @@
                         <div class="kartya-blokk">
                             <div class="mondat">Ha energikus, erős és izgalmas hangulatú zenékre és előadókra vágysz.
                             </div>
+                            <span class="blokk-cim">Stílusok</span>
+                            <div class="tagek"><span class="tag"><i
+                                        class="fa-solid fa-compact-disc"></i>Trap</span><span class="tag"><i
+                                        class="fa-solid fa-compact-disc"></i>Rage</span><span class="tag"><i
+                                        class="fa-solid fa-compact-disc"></i>Hip-hop</span></div>
+                            <span class="blokk-cim">Mikor hallgasd?</span>
+                            <div class="tagek"><span class="tag"><i class="fa-solid fa-clock"></i>Edzés</span><span
+                                    class="tag"><i class="fa-solid fa-clock"></i>Utazás</span><span class="tag"><i
+                                        class="fa-solid fa-clock"></i>Készülődés</span></div>
                             <span class="blokk-cim">Előadók</span>
                             <div class="eloadok-lista">
-
                                 <div class="eloado">
                                     <div class="eloado-sor">
-                                        <button class="eloado-fejlec" type="button" aria-expanded="false">
-                                            <img src="pics/ken carson.png" alt="ken carson">
-                                            <span class="eloado-nev">Ken Carson</span>
-                                            <span class="chevron"><i class="fa-solid fa-chevron-down"></i></span>
-                                        </button>
+                                        <button class="eloado-fejlec" type="button" aria-expanded="false"><img
+                                                src="pics/ken carson.png" alt="ken carson"><span class="eloado-nev">Ken
+                                                Carson</span><span class="chevron"><i
+                                                    class="fa-solid fa-chevron-down"></i></span></button>
                                         <a class="spotify-ikon"
-                                            href="https://open.spotify.com/artist/3gBZUcNeVumkeeJ19CY2sX?si=iONCdku5RXOo9EhO2Kq1gA"
-                                            target="_blank" aria-label="Ken Carson megnyitása Spotify-on">
-                                            <i class="fa-brands fa-spotify"></i>
-                                        </a>
+                                            href="https://open.spotify.com/artist/3gBZUcNeVumkeeJ19CY2sX"
+                                            target="_blank" rel="noopener"
+                                            aria-label="Ken Carson megnyitása Spotify-on"><i
+                                                class="fa-brands fa-spotify"></i></a>
                                     </div>
                                     <div class="eloado-tartalom">
                                         <div class="eloado-tartalom-belso">
@@ -191,7 +205,7 @@
                                                         Whine</span></div>
                                                 <div class="zene"><i class="fa-solid fa-music"></i><span>Rock n
                                                         Roll</span></div>
-                                                <div class="zene"><i class="fa-solid fa-music"></i><span>Jennifer's
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>Jennifer&#x27;s
                                                         Body</span></div>
                                                 <div class="zene"><i class="fa-solid fa-music"></i><span>Succubus</span>
                                                 </div>
@@ -199,27 +213,23 @@
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="eloado">
                                     <div class="eloado-sor">
-                                        <button class="eloado-fejlec" type="button" aria-expanded="false">
-                                            <img src="pics/Yeat.png" alt="yeat">
-                                            <span class="eloado-nev">Yeat</span>
-                                            <span class="chevron"><i class="fa-solid fa-chevron-down"></i></span>
-                                        </button>
+                                        <button class="eloado-fejlec" type="button" aria-expanded="false"><img
+                                                src="pics/Yeat.png" alt="yeat"><span class="eloado-nev">Yeat</span><span
+                                                class="chevron"><i class="fa-solid fa-chevron-down"></i></span></button>
                                         <a class="spotify-ikon"
-                                            href="https://open.spotify.com/artist/3qiHUAX7zY4Qnjx8TNUzVx?si=BwzxYmlaSvm8LEwfOwcdnA"
-                                            target="_blank" aria-label="Yeat megnyitása Spotify-on">
-                                            <i class="fa-brands fa-spotify"></i>
-                                        </a>
+                                            href="https://open.spotify.com/artist/3qiHUAX7zY4Qnjx8TNUzVx"
+                                            target="_blank" rel="noopener" aria-label="Yeat megnyitása Spotify-on"><i
+                                                class="fa-brands fa-spotify"></i></a>
                                     </div>
                                     <div class="eloado-tartalom">
                                         <div class="eloado-tartalom-belso">
                                             <div class="zenek-lista">
                                                 <div class="zene"><i class="fa-solid fa-music"></i><span>Come N
                                                         Go</span></div>
-                                                <div class="zene"><i class="fa-solid fa-music"></i><span>Get
-                                                        Busy</span></div>
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>Get Busy</span>
+                                                </div>
                                                 <div class="zene"><i class="fa-solid fa-music"></i><span>Rich
                                                         Minion</span></div>
                                                 <div class="zene"><i class="fa-solid fa-music"></i><span>Poppin</span>
@@ -230,19 +240,16 @@
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="eloado">
                                     <div class="eloado-sor">
-                                        <button class="eloado-fejlec" type="button" aria-expanded="false">
-                                            <img src="pics/drake.png" alt="drake">
-                                            <span class="eloado-nev">Drake</span>
-                                            <span class="chevron"><i class="fa-solid fa-chevron-down"></i></span>
-                                        </button>
+                                        <button class="eloado-fejlec" type="button" aria-expanded="false"><img
+                                                src="pics/drake.png" alt="drake"><span
+                                                class="eloado-nev">Drake</span><span class="chevron"><i
+                                                    class="fa-solid fa-chevron-down"></i></span></button>
                                         <a class="spotify-ikon"
-                                            href="https://open.spotify.com/artist/3TVXtAsR1Inumwj472S9r4?si=2OWIzxLyQ4S5ZT8kwOoxMw"
-                                            target="_blank" aria-label="Drake megnyitása Spotify-on">
-                                            <i class="fa-brands fa-spotify"></i>
-                                        </a>
+                                            href="https://open.spotify.com/artist/3TVXtAsR1Inumwj472S9r4"
+                                            target="_blank" rel="noopener" aria-label="Drake megnyitása Spotify-on"><i
+                                                class="fa-brands fa-spotify"></i></a>
                                     </div>
                                     <div class="eloado-tartalom">
                                         <div class="eloado-tartalom-belso">
@@ -251,24 +258,21 @@
                                                         Motto</span></div>
                                                 <div class="zene"><i class="fa-solid fa-music"></i><span>Hotline
                                                         Bling</span></div>
-                                                <div class="zene"><i class="fa-solid fa-music"></i><span>God's
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>God&#x27;s
                                                         Plan</span></div>
                                                 <div class="zene"><i
-                                                        class="fa-solid fa-music"></i><span>Passionfruit</span>
-                                                </div>
+                                                        class="fa-solid fa-music"></i><span>Passionfruit</span></div>
                                                 <div class="zene"><i class="fa-solid fa-music"></i><span>Marvins
                                                         Room</span></div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
             <div class="hangulat-kartya">
                 <button class="kartya-fejlec" type="button" aria-expanded="false">
                     <span class="ikon"><i class="fa-solid fa-sad-tear"></i></span>
@@ -280,21 +284,28 @@
                         <div class="kartya-blokk">
                             <div class="mondat">Ha szomorú, mély és gondolkozó hangulatú zenékre és előadókra vágysz.
                             </div>
+                            <span class="blokk-cim">Stílusok</span>
+                            <div class="tagek"><span class="tag"><i class="fa-solid fa-compact-disc"></i>Emo
+                                    rap</span><span class="tag"><i
+                                        class="fa-solid fa-compact-disc"></i>Alternatív</span><span class="tag"><i
+                                        class="fa-solid fa-compact-disc"></i>Pop</span></div>
+                            <span class="blokk-cim">Mikor hallgasd?</span>
+                            <div class="tagek"><span class="tag"><i class="fa-solid fa-clock"></i>Éjszakai
+                                    séta</span><span class="tag"><i class="fa-solid fa-clock"></i>Esős nap</span><span
+                                    class="tag"><i class="fa-solid fa-clock"></i>Gondolkodás</span></div>
                             <span class="blokk-cim">Előadók</span>
                             <div class="eloadok-lista">
-
                                 <div class="eloado">
                                     <div class="eloado-sor">
-                                        <button class="eloado-fejlec" type="button" aria-expanded="false">
-                                            <img src="pics/lil peep.png" alt="lil peep">
-                                            <span class="eloado-nev">Lil Peep</span>
-                                            <span class="chevron"><i class="fa-solid fa-chevron-down"></i></span>
-                                        </button>
+                                        <button class="eloado-fejlec" type="button" aria-expanded="false"><img
+                                                src="pics/lil peep.png" alt="lil peep"><span class="eloado-nev">Lil
+                                                Peep</span><span class="chevron"><i
+                                                    class="fa-solid fa-chevron-down"></i></span></button>
                                         <a class="spotify-ikon"
-                                            href="https://open.spotify.com/artist/2kCcBybjl3SAtIcwdWpUe3?si=ACvSJR8ITrWHGvLv_77hRw"
-                                            target="_blank" aria-label="Lil Peep megnyitása Spotify-on">
-                                            <i class="fa-brands fa-spotify"></i>
-                                        </a>
+                                            href="https://open.spotify.com/artist/2kCcBybjl3SAtIcwdWpUe3"
+                                            target="_blank" rel="noopener"
+                                            aria-label="Lil Peep megnyitása Spotify-on"><i
+                                                class="fa-brands fa-spotify"></i></a>
                                     </div>
                                     <div class="eloado-tartalom">
                                         <div class="eloado-tartalom-belso">
@@ -313,25 +324,23 @@
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="eloado">
                                     <div class="eloado-sor">
-                                        <button class="eloado-fejlec" type="button" aria-expanded="false">
-                                            <img src="pics/juice.png" alt="juice wrld">
-                                            <span class="eloado-nev">Juice WRLD</span>
-                                            <span class="chevron"><i class="fa-solid fa-chevron-down"></i></span>
-                                        </button>
+                                        <button class="eloado-fejlec" type="button" aria-expanded="false"><img
+                                                src="pics/juice.png" alt="juice wrld"><span class="eloado-nev">Juice
+                                                WRLD</span><span class="chevron"><i
+                                                    class="fa-solid fa-chevron-down"></i></span></button>
                                         <a class="spotify-ikon"
-                                            href="https://open.spotify.com/artist/4MCBfE4596Uoi2O4DtmEMz?si=ctOcaAiUQSGvxMGUEea7FA"
-                                            target="_blank" aria-label="Juice WRLD megnyitása Spotify-on">
-                                            <i class="fa-brands fa-spotify"></i>
-                                        </a>
+                                            href="https://open.spotify.com/artist/4MCBfE4596Uoi2O4DtmEMz"
+                                            target="_blank" rel="noopener"
+                                            aria-label="Juice WRLD megnyitása Spotify-on"><i
+                                                class="fa-brands fa-spotify"></i></a>
                                     </div>
                                     <div class="eloado-tartalom">
                                         <div class="eloado-tartalom-belso">
                                             <div class="zenek-lista">
-                                                <div class="zene"><i class="fa-solid fa-music"></i><span>All Girls
-                                                        Are The Same</span></div>
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>All Girls Are
+                                                        The Same</span></div>
                                                 <div class="zene"><i class="fa-solid fa-music"></i><span>Lucid
                                                         Dreams</span></div>
                                                 <div class="zene"><i class="fa-solid fa-music"></i><span>Legends</span>
@@ -344,71 +353,409 @@
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="eloado">
                                     <div class="eloado-sor">
-                                        <button class="eloado-fejlec" type="button" aria-expanded="false">
-                                            <img src="pics/billie eilish.png" alt="billie eilish">
-                                            <span class="eloado-nev">Billie Eilish</span>
-                                            <span class="chevron"><i class="fa-solid fa-chevron-down"></i></span>
-                                        </button>
+                                        <button class="eloado-fejlec" type="button" aria-expanded="false"><img
+                                                src="pics/billie eilish.png" alt="billie eilish"><span
+                                                class="eloado-nev">Billie Eilish</span><span class="chevron"><i
+                                                    class="fa-solid fa-chevron-down"></i></span></button>
                                         <a class="spotify-ikon"
-                                            href="https://open.spotify.com/artist/6qqNVTkY8uBg9cP3Jd7DAH?si=N9oXCmu5SkeiSsOeaUNbdQ"
-                                            target="_blank" aria-label="Billie Eilish megnyitása Spotify-on">
-                                            <i class="fa-brands fa-spotify"></i>
-                                        </a>
+                                            href="https://open.spotify.com/artist/6qqNVTkY8uBg9cP3Jd7DAH"
+                                            target="_blank" rel="noopener"
+                                            aria-label="Billie Eilish megnyitása Spotify-on"><i
+                                                class="fa-brands fa-spotify"></i></a>
                                     </div>
                                     <div class="eloado-tartalom">
                                         <div class="eloado-tartalom-belso">
                                             <div class="zenek-lista">
                                                 <div class="zene"><i class="fa-solid fa-music"></i><span>Ocean
                                                         Eyes</span></div>
-                                                <div class="zene"><i class="fa-solid fa-music"></i><span>bad
-                                                        guy</span></div>
-                                                <div class="zene"><i class="fa-solid fa-music"></i><span>everything
-                                                        i wanted</span></div>
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>bad guy</span>
+                                                </div>
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>everything i
+                                                        wanted</span></div>
                                                 <div class="zene"><i class="fa-solid fa-music"></i><span>lovely</span>
                                                 </div>
-                                                <div class="zene"><i class="fa-solid fa-music"></i><span>Happier
-                                                        Than Ever</span></div>
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>Happier Than
+                                                        Ever</span></div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hangulat-kartya">
+                <button class="kartya-fejlec" type="button" aria-expanded="false">
+                    <span class="ikon"><i class="fa-solid fa-champagne-glasses"></i></span>
+                    <span class="nev">Buli / Party</span>
+                    <span class="chevron"><i class="fa-solid fa-chevron-down"></i></span>
+                </button>
+                <div class="kartya-tartalom">
+                    <div class="kartya-tartalom-belso">
+                        <div class="kartya-blokk">
+                            <div class="mondat">Ha bulizni, táncolni és hangosan énekelni szeretnél.</div>
+                            <span class="blokk-cim">Stílusok</span>
+                            <div class="tagek"><span class="tag"><i class="fa-solid fa-compact-disc"></i>Pop</span><span
+                                    class="tag"><i class="fa-solid fa-compact-disc"></i>Trap</span><span class="tag"><i
+                                        class="fa-solid fa-compact-disc"></i>Synthwave</span></div>
+                            <span class="blokk-cim">Mikor hallgasd?</span>
+                            <div class="tagek"><span class="tag"><i class="fa-solid fa-clock"></i>Házibuli</span><span
+                                    class="tag"><i class="fa-solid fa-clock"></i>Autózás</span><span class="tag"><i
+                                        class="fa-solid fa-clock"></i>Készülődés</span></div>
+                            <span class="blokk-cim">Előadók</span>
+                            <div class="eloadok-lista">
+                                <div class="eloado">
+                                    <div class="eloado-sor">
+                                        <button class="eloado-fejlec" type="button" aria-expanded="false"><img
+                                                src="pics/travis.png" alt="travis scott"><span
+                                                class="eloado-nev">Travis Scott</span><span class="chevron"><i
+                                                    class="fa-solid fa-chevron-down"></i></span></button>
+                                        <a class="spotify-ikon" href="https://open.spotify.com/search/Travis%20Scott"
+                                            target="_blank" rel="noopener"
+                                            aria-label="Travis Scott megnyitása Spotify-on"><i
+                                                class="fa-brands fa-spotify"></i></a>
+                                    </div>
+                                    <div class="eloado-tartalom">
+                                        <div class="eloado-tartalom-belso">
+                                            <div class="zenek-lista">
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>SICKO
+                                                        MODE</span></div>
+                                                <div class="zene"><i
+                                                        class="fa-solid fa-music"></i><span>goosebumps</span></div>
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>FE!N</span>
+                                                </div>
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>Butterfly
+                                                        Effect</span></div>
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>Highest in the
+                                                        Room</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="eloado">
+                                    <div class="eloado-sor">
+                                        <button class="eloado-fejlec" type="button" aria-expanded="false"><img
+                                                src="pics/doja.jpg" alt="doja cat"><span class="eloado-nev">Doja
+                                                Cat</span><span class="chevron"><i
+                                                    class="fa-solid fa-chevron-down"></i></span></button>
+                                        <a class="spotify-ikon" href="https://open.spotify.com/search/Doja%20Cat"
+                                            target="_blank" rel="noopener"
+                                            aria-label="Doja Cat megnyitása Spotify-on"><i
+                                                class="fa-brands fa-spotify"></i></a>
+                                    </div>
+                                    <div class="eloado-tartalom">
+                                        <div class="eloado-tartalom-belso">
+                                            <div class="zenek-lista">
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>Say So</span>
+                                                </div>
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>Kiss Me
+                                                        More</span></div>
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>Woman</span>
+                                                </div>
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>Paint The Town
+                                                        Red</span></div>
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>Need To
+                                                        Know</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="eloado">
+                                    <div class="eloado-sor">
+                                        <button class="eloado-fejlec" type="button" aria-expanded="false"><img
+                                                src="pics/weekend.jpg" alt="the weeknd"><span class="eloado-nev">The
+                                                Weeknd</span><span class="chevron"><i
+                                                    class="fa-solid fa-chevron-down"></i></span></button>
+                                        <a class="spotify-ikon" href="https://open.spotify.com/search/The%20Weeknd"
+                                            target="_blank" rel="noopener"
+                                            aria-label="The Weeknd megnyitása Spotify-on"><i
+                                                class="fa-brands fa-spotify"></i></a>
+                                    </div>
+                                    <div class="eloado-tartalom">
+                                        <div class="eloado-tartalom-belso">
+                                            <div class="zenek-lista">
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>Blinding
+                                                        Lights</span></div>
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>Starboy</span>
+                                                </div>
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>Save Your
+                                                        Tears</span></div>
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>Can&#x27;t Feel
+                                                        My Face</span></div>
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>I Feel It
+                                                        Coming</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hangulat-kartya">
+                <button class="kartya-fejlec" type="button" aria-expanded="false">
+                    <span class="ikon"><i class="fa-solid fa-record-vinyl"></i></span>
+                    <span class="nev">Nosztalgia / Old School</span>
+                    <span class="chevron"><i class="fa-solid fa-chevron-down"></i></span>
+                </button>
+                <div class="kartya-tartalom">
+                    <div class="kartya-tartalom-belso">
+                        <div class="kartya-blokk">
+                            <div class="mondat">Ha nosztalgikus, klasszikus és időtálló hangulatú zenékre és előadókra
+                                vágysz.</div>
+                            <span class="blokk-cim">Stílusok</span>
+                            <div class="tagek"><span class="tag"><i class="fa-solid fa-compact-disc"></i>Golden era
+                                    hip-hop</span><span class="tag"><i class="fa-solid fa-compact-disc"></i>Boom
+                                    bap</span><span class="tag"><i class="fa-solid fa-compact-disc"></i>G-funk</span>
+                            </div>
+                            <span class="blokk-cim">Mikor hallgasd?</span>
+                            <div class="tagek"><span class="tag"><i class="fa-solid fa-clock"></i>Autózás</span><span
+                                    class="tag"><i class="fa-solid fa-clock"></i>Régi emlékek</span><span class="tag"><i
+                                        class="fa-solid fa-clock"></i>Házimunka</span></div>
+                            <span class="blokk-cim">Előadók</span>
+                            <div class="eloadok-lista">
+                                <div class="eloado">
+                                    <div class="eloado-sor">
+                                        <button class="eloado-fejlec" type="button" aria-expanded="false"><img
+                                                src="pics/tupac.png" alt="2pac"><span class="eloado-nev">2Pac</span><span
+                                                class="chevron"><i class="fa-solid fa-chevron-down"></i></span></button>
+                                        <a class="spotify-ikon" href="https://open.spotify.com/search/2Pac"
+                                            target="_blank" rel="noopener" aria-label="2Pac megnyitása Spotify-on"><i
+                                                class="fa-brands fa-spotify"></i></a>
+                                    </div>
+                                    <div class="eloado-tartalom">
+                                        <div class="eloado-tartalom-belso">
+                                            <div class="zenek-lista">
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>Dear
+                                                        Mama</span></div>
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>Changes</span>
+                                                </div>
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>California
+                                                        Love</span></div>
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>Ambitionz Az a
+                                                        Ridah</span></div>
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>Keep Ya Head
+                                                        Up</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="eloado">
+                                    <div class="eloado-sor">
+                                        <button class="eloado-fejlec" type="button" aria-expanded="false"><img
+                                                src="pics/biggie.jpg" alt="the notorious b.i.g."><span
+                                                class="eloado-nev">The Notorious B.I.G.</span><span class="chevron"><i
+                                                    class="fa-solid fa-chevron-down"></i></span></button>
+                                        <a class="spotify-ikon"
+                                            href="https://open.spotify.com/search/The%20Notorious%20B.I.G."
+                                            target="_blank" rel="noopener"
+                                            aria-label="The Notorious B.I.G. megnyitása Spotify-on"><i
+                                                class="fa-brands fa-spotify"></i></a>
+                                    </div>
+                                    <div class="eloado-tartalom">
+                                        <div class="eloado-tartalom-belso">
+                                            <div class="zenek-lista">
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>Juicy</span>
+                                                </div>
+                                                <div class="zene"><i
+                                                        class="fa-solid fa-music"></i><span>Hypnotize</span></div>
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>Big
+                                                        Poppa</span></div>
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>Mo Money Mo
+                                                        Problems</span></div>
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>Ten Crack
+                                                        Commandments</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="eloado">
+                                    <div class="eloado-sor">
+                                        <button class="eloado-fejlec" type="button" aria-expanded="false"><img
+                                                src="pics/eminem.jpg" alt="eminem"><span
+                                                class="eloado-nev">Eminem</span><span class="chevron"><i
+                                                    class="fa-solid fa-chevron-down"></i></span></button>
+                                        <a class="spotify-ikon" href="https://open.spotify.com/search/Eminem"
+                                            target="_blank" rel="noopener" aria-label="Eminem megnyitása Spotify-on"><i
+                                                class="fa-brands fa-spotify"></i></a>
+                                    </div>
+                                    <div class="eloado-tartalom">
+                                        <div class="eloado-tartalom-belso">
+                                            <div class="zenek-lista">
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>Lose
+                                                        Yourself</span></div>
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>Stan</span>
+                                                </div>
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>The Real Slim
+                                                        Shady</span></div>
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>Without
+                                                        Me</span></div>
+                                                <div class="zene"><i
+                                                        class="fa-solid fa-music"></i><span>Mockingbird</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <div class="hangulat-kartya">
+                <button class="kartya-fejlec" type="button" aria-expanded="false">
+                    <span class="ikon"><i class="fa-solid fa-heart"></i></span>
+                    <span class="nev">Romantikus / Love</span>
+                    <span class="chevron"><i class="fa-solid fa-chevron-down"></i></span>
+                </button>
+                <div class="kartya-tartalom">
+                    <div class="kartya-tartalom-belso">
+                        <div class="kartya-blokk">
+                            <div class="mondat">Ha romantikus, érzéki és melegszívű hangulatú zenékre vágysz.</div>
+                            <span class="blokk-cim">Stílusok</span>
+                            <div class="tagek"><span class="tag"><i
+                                        class="fa-solid fa-compact-disc"></i>R&amp;B</span><span class="tag"><i
+                                        class="fa-solid fa-compact-disc"></i>Neo soul</span><span class="tag"><i
+                                        class="fa-solid fa-compact-disc"></i>Alt R&amp;B</span></div>
+                            <span class="blokk-cim">Mikor hallgasd?</span>
+                            <div class="tagek"><span class="tag"><i class="fa-solid fa-clock"></i>Randi</span><span
+                                    class="tag"><i class="fa-solid fa-clock"></i>Esti vacsora</span><span class="tag"><i
+                                        class="fa-solid fa-clock"></i>Utazás</span></div>
+                            <span class="blokk-cim">Előadók</span>
+                            <div class="eloadok-lista">
+                                <div class="eloado">
+                                    <div class="eloado-sor">
+                                        <button class="eloado-fejlec" type="button" aria-expanded="false"><img
+                                                src="pics/sza.jpg" alt="sza"><span class="eloado-nev">SZA</span><span
+                                                class="chevron"><i class="fa-solid fa-chevron-down"></i></span></button>
+                                        <a class="spotify-ikon" href="https://open.spotify.com/search/SZA"
+                                            target="_blank" rel="noopener" aria-label="SZA megnyitása Spotify-on"><i
+                                                class="fa-brands fa-spotify"></i></a>
+                                    </div>
+                                    <div class="eloado-tartalom">
+                                        <div class="eloado-tartalom-belso">
+                                            <div class="zenek-lista">
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>Snooze</span>
+                                                </div>
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>Kill
+                                                        Bill</span></div>
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>Good
+                                                        Days</span></div>
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>Love
+                                                        Galore</span></div>
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>Broken
+                                                        Clocks</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="eloado">
+                                    <div class="eloado-sor">
+                                        <button class="eloado-fejlec" type="button" aria-expanded="false"><img
+                                                src="pics/frank ocean.jpg" alt="frank ocean"><span
+                                                class="eloado-nev">Frank Ocean</span><span class="chevron"><i
+                                                    class="fa-solid fa-chevron-down"></i></span></button>
+                                        <a class="spotify-ikon" href="https://open.spotify.com/search/Frank%20Ocean"
+                                            target="_blank" rel="noopener"
+                                            aria-label="Frank Ocean megnyitása Spotify-on"><i
+                                                class="fa-brands fa-spotify"></i></a>
+                                    </div>
+                                    <div class="eloado-tartalom">
+                                        <div class="eloado-tartalom-belso">
+                                            <div class="zenek-lista">
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>Thinkin Bout
+                                                        You</span></div>
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>Pink +
+                                                        White</span></div>
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>Nights</span>
+                                                </div>
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>Ivy</span>
+                                                </div>
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>Lost</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="eloado">
+                                    <div class="eloado-sor">
+                                        <button class="eloado-fejlec" type="button" aria-expanded="false"><img
+                                                src="pics/daniel c.jpg" alt="daniel caesar"><span
+                                                class="eloado-nev">Daniel Caesar</span><span class="chevron"><i
+                                                    class="fa-solid fa-chevron-down"></i></span></button>
+                                        <a class="spotify-ikon" href="https://open.spotify.com/search/Daniel%20Caesar"
+                                            target="_blank" rel="noopener"
+                                            aria-label="Daniel Caesar megnyitása Spotify-on"><i
+                                                class="fa-brands fa-spotify"></i></a>
+                                    </div>
+                                    <div class="eloado-tartalom">
+                                        <div class="eloado-tartalom-belso">
+                                            <div class="zenek-lista">
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>Best
+                                                        Part</span></div>
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>Get You</span>
+                                                </div>
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>Japanese
+                                                        Denim</span></div>
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>Blessed</span>
+                                                </div>
+                                                <div class="zene"><i class="fa-solid fa-music"></i><span>Always</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <h2 class="szekcio-cim" id="hogyan">Hogyan működik?</h2>
+        <section class="lepesek">
+            <div class="lepes">
+                <div class="ikon"><i class="fa-solid fa-hand-pointer"></i></div>
+                <h3>Válassz hangulatot</h3>
+                <p>Nyisd le azt a kártyát, amelyik most a legjobban passzol hozzád.</p>
+            </div>
+            <div class="lepes">
+                <div class="ikon"><i class="fa-solid fa-user-group"></i></div>
+                <h3>Nézd meg az előadókat</h3>
+                <p>Minden hangulathoz három előadó és előadónként öt szám tartozik.</p>
+            </div>
+            <div class="lepes">
+                <div class="ikon"><i class="fa-brands fa-spotify"></i></div>
+                <h3>Hallgasd meg Spotify-on</h3>
+                <p>Az előadó melletti ikonnal megnyílik a profilja Spotify-on.</p>
+            </div>
         </section>
     </div>
 
     <footer>
         <div class="footer-content">
-            <p>&copy; 2026 Zene. All rights reserved.</p>
+            <p>&copy; 2026 Hangoló – Zenei hangulatok. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        document.querySelectorAll('.kartya-fejlec').forEach(function (fejlec) {
-            var kartya = fejlec.closest('.hangulat-kartya');
-
+        document.querySelectorAll('.kartya-fejlec, .eloado-fejlec').forEach(function (fejlec) {
+            var doboz = fejlec.closest('.hangulat-kartya, .eloado');
             fejlec.addEventListener('click', function () {
-                var nyitva = kartya.classList.toggle('aktiv');
+                var nyitva = doboz.classList.toggle('aktiv');
                 fejlec.setAttribute('aria-expanded', nyitva ? 'true' : 'false');
             });
         });
 
-
-        document.querySelectorAll('.eloado-fejlec').forEach(function (fejlec) {
-            var eloado = fejlec.closest('.eloado');
-
-            fejlec.addEventListener('click', function () {
-                var nyitva = eloado.classList.toggle('aktiv');
-                fejlec.setAttribute('aria-expanded', nyitva ? 'true' : 'false');
-            });
+        document.getElementById('veletlen').addEventListener('click', function () {
+            var kartyak = document.querySelectorAll('.hangulat-kartya');
+            var k = kartyak[Math.floor(Math.random() * kartyak.length)];
+            if (!k.classList.contains('aktiv')) { k.querySelector('.kartya-fejlec').click(); }
+            k.scrollIntoView({ behavior: 'smooth', block: 'center' });
         });
     </script>
 </body>
