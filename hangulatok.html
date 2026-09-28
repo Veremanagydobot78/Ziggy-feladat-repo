@@ -15,37 +15,35 @@
 </head>
 
 <body>
-    <nav>
-        <div id="menu">
-            <ul>
+
+    <div class="container">
+        <nav class="topbar" aria-label="Főmenü">
+            <ul class="menu">
                 <li><a href="hangulatok.html">Hangulatok</a></li>
                 <li><a href="stilusok.html">Stílusok</a></li>
                 <li><a href="tablazat.html">Táblázat</a></li>
             </ul>
-            <div class="marka">
-                <span class="marka-nev">Hangoló</span>
-                <div class="logo"><img src="logo.png" alt="Hangoló logó"></div>
-            </div>
-        </div>
-    </nav>
+            <a class="brand" href="#" aria-label="Kezdőlap">
+                <span class="brand-name">Hangoló</span>
+                <span class="logo-btn"><span class="logo-img" aria-hidden="true"></span></span>
+            </a>
+        </nav>
 
-    <div class="container">
-        <header class="banner">
-            <span class="banner-dekor" aria-hidden="true"><i class="fa-solid fa-headphones-simple"></i></span>
-            <div class="banner-tartalom">
-                <span class="banner-marka"><i class="fa-solid fa-headphones-simple"></i>Hangoló</span>
-                <h1>Zenei hangulatok.</h1>
-                <p class="alcim">Válaszd ki a hangulatod, kattints rá, és megkapod hozzá a stílust, a hallgatási
-                    helyzeteket, és pár zenei javaslatot.</p>
-                <div class="tagek">
-                    <span class="tag"><i class="fa-solid fa-face-smile"></i>6 hangulat</span>
-                    <span class="tag"><i class="fa-solid fa-microphone"></i>18 előadó</span>
-                    <span class="tag"><i class="fa-solid fa-music"></i>90 zene</span>
-                </div>
-                <button class="banner-gomb" id="veletlen" type="button"><i class="fa-solid fa-shuffle"></i>Válassz nekem
-                    hangulatot</button>
-            </div>
+        <header class="hero">
+            <span class="hero-badge"><span aria-hidden="true">🎧</span> Hangoló</span>
+            <h1>Zenei hangulatok.</h1>
+            <p>Válaszd ki a hangulatod, kattints rá, és megkapod hozzá a stílust, a hallgatási
+                helyzeteket, és pár zenei javaslatot.
+            </p>
+            <ul class="hero-stats">
+                <li>6 hangulat</li>
+                <li>18 előadó</li>
+                <li>90 zene</li>
+            </ul>
+            <button class="banner-gomb" id="veletlen" type="button"><i class="fa-solid fa-shuffle"></i>Válassz nekem
+                hangulatot</button>
         </header>
+
 
         <p class="szekcio-bevezeto">Melyik hangulatban vagy most?</p>
 
@@ -739,6 +737,10 @@
                 <p>Az előadó melletti ikonnal megnyílik a profilja Spotify-on.</p>
             </div>
         </section>
+    </div>
+
+    <div class="kep-eredet">
+        <p>A képek forrása: <a href="https://www.pinterest.com/" target="_blank">Pinterest</a></p>
     </div>
 
     <footer>

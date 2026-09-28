@@ -1,384 +1,423 @@
 <!DOCTYPE html>
 <html lang="hu">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        <link
-            href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Unbounded:wght@600;700;800&display=swap"
-            rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Unbounded:wght@600;700;800&display=swap"
+        rel="stylesheet">
 
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-        <link rel="stylesheet" href="stilusok.css">
+    <link rel="stylesheet" href="stilusok.css">
 
-        <title>Hangoló – Hangulatokból lejátszási lista</title>
-    </head>
+    <title>Hangoló – Hangulatokból lejátszási lista</title>
+</head>
 
-    <body>
+<body>
 
-        <nav>
-            <div id="menu">
+    <div class="container">
+        <nav class="topbar" aria-label="Főmenü">
+            <ul class="menu">
+                <li><a href="hangulatok.html">Hangulatok</a></li>
+                <li><a href="stilusok.html">Stílusok</a></li>
+                <li><a href="tablazat.html">Táblázat</a></li>
+            </ul>
+            <a class="brand" href="#" aria-label="Kezdőlap">
+                <span class="brand-name">Hangoló</span>
+                <span class="logo-btn"><span class="logo-img" aria-hidden="true"></span></span>
+            </a>
+        </nav>
 
-                <ul>
-                    <li><a href="hangulatok.html">Hangulatok</a></li>
-                    <li><a href="stilusok.html">Stílusok</a></li>
-                    <li><a href="tablazat.html">Táblázat</a></li>
-                </ul>
+        <header class="hero">
+            <span class="hero-badge"><span aria-hidden="true">🎧</span> Hangoló</span>
+            <h1>Zenei hangulatok.</h1>
+            <p>Válaszd ki a hangulatod, kattints rá, és megkapod hozzá a stílust, a hallgatási
+                helyzeteket, és pár zenei javaslatot.
+            </p>
+            <ul class="hero-stats">
+                <li>6 műfaj</li>
+                <li>18 előadó</li>
+                <li>18 zene</li>
+            </ul>
 
-                <div class="logo">
-                    <span>Hangoló</span>
-                    <img src="logo.png" alt="Hangoló logo">
+        </header>
+
+
+
+        <section class="hangulatok-grid">
+            <div class="oszlop">
+
+                <div class="hangulat-kartya kartya-pop">
+
+                    <button class="kartya-fejlec" type="button" aria-expanded="false">
+
+                        <span class="ikon">
+                            <i class="fa-solid fa-music"></i>
+                        </span>
+
+                        <span class="nev">
+                            Pop
+                        </span>
+
+                        <span class="chevron">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </span>
+
+                    </button>
+
+                    <div class="kartya-tartalom">
+
+                        <div class="kartya-blokk">
+
+                            <span class="blokk-cim">
+                                Zenék
+                            </span>
+
+                            <div class="zenek">
+
+                                <div class="zene">
+                                    <img src="pics/a weeknd.jpg" alt="Blinding Lights borító">
+                                    <span>Blinding Lights</span>
+                                </div>
+
+                                <div class="zene">
+                                    <img src="pics/a shape of you.jpg" alt="Shape of You borító">
+                                    <span>Shape of You</span>
+                                </div>
+
+                                <div class="zene">
+                                    <img src="pics/a billie.jpg" alt="bad guy borító">
+                                    <span>bad guy</span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="kartya-blokk">
+
+                            <span class="blokk-cim">
+                                Előadók
+                            </span>
+
+                            <div class="eloadok">
+
+                                <div class="eloado">
+
+                                    <img src="pics/weekend.jpg" alt="The Weeknd">
+
+                                    <span>
+                                        The Weeknd
+                                    </span>
+
+                                </div>
+
+                                <div class="eloado">
+
+                                    <img src="pics/a ed sheeran.jpg" alt="Ed Sheeran">
+
+                                    <span>
+                                        Ed Sheeran
+                                    </span>
+
+                                </div>
+
+                                <div class="eloado">
+
+                                    <img src="pics/billie eilish.png" alt="Billie Eilish">
+
+                                    <span>
+                                        Billie Eilish
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="hangulat-kartya kartya-rap">
+
+                    <button class="kartya-fejlec" type="button" aria-expanded="false">
+
+                        <span class="ikon">
+                            <i class="fa-solid fa-microphone"></i>
+                        </span>
+
+                        <span class="nev">
+                            Rap
+                        </span>
+
+                        <span class="chevron">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </span>
+
+                    </button>
+
+                    <div class="kartya-tartalom">
+
+                        <div class="kartya-blokk">
+
+                            <span class="blokk-cim">
+                                Zenék
+                            </span>
+
+                            <div class="zenek">
+
+                                <div class="zene">
+                                    <img src="pics/a humble.jpg" alt="HUMBLE. borító">
+                                    <span>HUMBLE.</span>
+                                </div>
+
+                                <div class="zene">
+                                    <img src="pics/a gods plan.jpg" alt="God's Plan borító">
+                                    <span>God's Plan</span>
+                                </div>
+
+                                <div class="zene">
+                                    <img src="pics/a lose yourself.jpg" alt="Lose Yourself borító">
+                                    <span>Lose Yourself</span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="kartya-blokk">
+
+                            <span class="blokk-cim">
+                                Előadók
+                            </span>
+
+                            <div class="eloadok">
+
+                                <div class="eloado">
+
+                                    <img src="pics/a kendrick.jpg" alt="Kendrick Lamar">
+
+                                    <span>
+                                        Kendrick Lamar
+                                    </span>
+
+                                </div>
+
+                                <div class="eloado">
+
+                                    <img src="pics/drake.png" alt="Drake">
+
+                                    <span>
+                                        Drake
+                                    </span>
+
+                                </div>
+
+                                <div class="eloado">
+
+                                    <img src="pics/eminem.jpg" alt="Eminem">
+
+                                    <span>
+                                        Eminem
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="hangulat-kartya kartya-hiphop">
+
+                    <button class="kartya-fejlec" type="button" aria-expanded="false">
+
+                        <span class="ikon">
+                            <i class="fa-solid fa-record-vinyl"></i>
+                        </span>
+
+                        <span class="nev">
+                            Hip-hop
+                        </span>
+
+                        <span class="chevron">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </span>
+
+                    </button>
+
+                    <div class="kartya-tartalom">
+
+                        <div class="kartya-blokk">
+
+                            <span class="blokk-cim">
+                                Zenék
+                            </span>
+
+                            <div class="zenek">
+
+                                <div class="zene">
+                                    <img src="pics/a sicko.jpg" alt="SICKO MODE borító">
+                                    <span>SICKO MODE</span>
+                                </div>
+
+                                <div class="zene">
+                                    <img src="pics/a alright.jpg" alt="Alright borító">
+                                    <span>Alright</span>
+                                </div>
+
+                                <div class="zene">
+                                    <img src="pics/a juicy.jpg" alt="Juicy borító">
+                                    <span>Juicy</span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="kartya-blokk">
+
+                            <span class="blokk-cim">
+                                Előadók
+                            </span>
+
+                            <div class="eloadok">
+
+                                <div class="eloado">
+
+                                    <img src="pics/travis.png" alt="Travis Scott">
+
+                                    <span>
+                                        Travis Scott
+                                    </span>
+
+                                </div>
+
+                                <div class="eloado">
+
+                                    <img src="pics/a kendrick.jpg" alt="Kendrick Lamar">
+
+                                    <span>
+                                        Kendrick Lamar
+                                    </span>
+
+                                </div>
+
+                                <div class="eloado">
+
+                                    <img src="pics/biggie.jpg" alt="The Notorious B.I.G.">
+
+                                    <span>
+                                        The Notorious B.I.G.
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
                 </div>
 
             </div>
-        </nav>
 
-        <div class="container">
+            <div class="oszlop">
 
-            <header class="banner">
+                <div class="hangulat-kartya kartya-jazz">
 
-                <span class="banner-dekor" aria-hidden="true">
-                    <i class="fa-solid fa-headphones-simple"></i>
-                </span>
+                    <button class="kartya-fejlec" type="button" aria-expanded="false">
 
-                <div class="banner-tartalom">
+                        <span class="ikon">
+                            <i class="fa-solid fa-drum"></i>
+                        </span>
 
-                    <h1>Zenei Stílusok</h1>
+                        <span class="nev">
+                            Jazz
+                        </span>
 
-                    <p class="alcim">
-                        Válassz egy stílust tetszés szerint, és megkapod
-                        a hozzá tartozó zenéket és előadókat.
-                    </p>
+                        <span class="chevron">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </span>
 
-                </div>
+                    </button>
 
-            </header>
+                    <div class="kartya-tartalom">
 
-            <section class="hangulatok-grid">
-                <div class="oszlop">
+                        <div class="kartya-blokk">
 
-                    <div class="hangulat-kartya kartya-pop">
-
-                        <button
-                            class="kartya-fejlec"
-                            type="button"
-                            aria-expanded="false">
-
-                            <span class="ikon">
-                                <i class="fa-solid fa-music"></i>
+                            <span class="blokk-cim">
+                                Zenék
                             </span>
 
-                            <span class="nev">
-                                Pop
-                            </span>
+                            <div class="zenek">
 
-                            <span class="chevron">
-                                <i class="fa-solid fa-chevron-down"></i>
-                            </span>
-
-                        </button>
-
-                        <div class="kartya-tartalom">
-
-                            <div class="kartya-blokk">
-
-                                <span class="blokk-cim">
-                                    Zenék
-                                </span>
-
-                                <div class="zenek">
-
-                                    <div class="zene">
-                                        <img
-                                            src="pics/a weeknd.jpg"
-                                            alt="Blinding Lights borító">
-                                        <span>Blinding Lights</span>
-                                    </div>
-
-                                    <div class="zene">
-                                        <img
-                                            src="pics/a shape of you.jpg"
-                                            alt="Shape of You borító">
-                                        <span>Shape of You</span>
-                                    </div>
-
-                                    <div class="zene">
-                                        <img
-                                            src="pics/a billie.jpg"
-                                            alt="bad guy borító">
-                                        <span>bad guy</span>
-                                    </div>
-
+                                <div class="zene">
+                                    <img src="pics/a take five.jpg" alt="Take Five borító">
+                                    <span>Take Five</span>
                                 </div>
 
-                            </div>
+                                <div class="zene">
+                                    <img src="pics/a so what.jpg" alt="So What borító">
+                                    <span>So What</span>
+                                </div>
 
-                            <div class="kartya-blokk">
-
-                                <span class="blokk-cim">
-                                    Előadók
-                                </span>
-
-                                <div class="eloadok">
-
-                                    <div class="eloado">
-
-                                        <img
-                                            src="pics/weekend.jpg"
-                                            alt="The Weeknd">
-
-                                        <span>
-                                            The Weeknd
-                                        </span>
-
-                                    </div>
-
-                                    <div class="eloado">
-
-                                        <img
-                                            src="pics/a ed sheeran.jpg"
-                                            alt="Ed Sheeran">
-
-                                        <span>
-                                            Ed Sheeran
-                                        </span>
-
-                                    </div>
-
-                                    <div class="eloado">
-
-                                        <img
-                                            src="pics/billie eilish.png"
-                                            alt="Billie Eilish">
-
-                                        <span>
-                                            Billie Eilish
-                                        </span>
-
-                                    </div>
-
+                                <div class="zene">
+                                    <img src="pics/a feeling good.jpg" alt="Feeling Good borító">
+                                    <span>Feeling Good</span>
                                 </div>
 
                             </div>
 
                         </div>
 
-                    </div>
+                        <div class="kartya-blokk">
 
-                    <div class="hangulat-kartya kartya-rap">
-
-                        <button
-                            class="kartya-fejlec"
-                            type="button"
-                            aria-expanded="false">
-
-                            <span class="ikon">
-                                <i class="fa-solid fa-microphone"></i>
+                            <span class="blokk-cim">
+                                Előadók
                             </span>
 
-                            <span class="nev">
-                                Rap
-                            </span>
+                            <div class="eloadok">
 
-                            <span class="chevron">
-                                <i class="fa-solid fa-chevron-down"></i>
-                            </span>
+                                <div class="eloado">
 
-                        </button>
+                                    <img src="pics/a miles davis.jpg" alt="Miles Davis">
 
-                        <div class="kartya-tartalom">
-
-                            <div class="kartya-blokk">
-
-                                <span class="blokk-cim">
-                                    Zenék
-                                </span>
-
-                                <div class="zenek">
-
-                                    <div class="zene">
-                                        <img
-                                            src="pics/a humble.jpg"
-                                            alt="HUMBLE. borító">
-                                        <span>HUMBLE.</span>
-                                    </div>
-
-                                    <div class="zene">
-                                        <img
-                                            src="pics/a gods plan.jpg"
-                                            alt="God's Plan borító">
-                                        <span>God's Plan</span>
-                                    </div>
-
-                                    <div class="zene">
-                                        <img
-                                            src="pics/a lose yourself.jpg"
-                                            alt="Lose Yourself borító">
-                                        <span>Lose Yourself</span>
-                                    </div>
+                                    <span>
+                                        Miles Davis
+                                    </span>
 
                                 </div>
 
-                            </div>
+                                <div class="eloado">
 
-                            <div class="kartya-blokk">
+                                    <img src="pics/john coltrane.png" alt="John Coltrane">
 
-                                <span class="blokk-cim">
-                                    Előadók
-                                </span>
-
-                                <div class="eloadok">
-
-                                    <div class="eloado">
-
-                                        <img
-                                            src="pics/a kendrick.jpg"
-                                            alt="Kendrick Lamar">
-
-                                        <span>
-                                            Kendrick Lamar
-                                        </span>
-
-                                    </div>
-
-                                    <div class="eloado">
-
-                                        <img
-                                            src="pics/drake.png"
-                                            alt="Drake">
-
-                                        <span>
-                                            Drake
-                                        </span>
-
-                                    </div>
-
-                                    <div class="eloado">
-
-                                        <img
-                                            src="pics/eminem.jpg"
-                                            alt="Eminem">
-
-                                        <span>
-                                            Eminem
-                                        </span>
-
-                                    </div>
+                                    <span>
+                                        John Coltrane
+                                    </span>
 
                                 </div>
 
-                            </div>
+                                <div class="eloado">
 
-                        </div>
+                                    <img src="pics/a nina simone.jpg" alt="Nina Simone">
 
-                    </div>
-
-                    <div class="hangulat-kartya kartya-hiphop">
-
-                        <button
-                            class="kartya-fejlec"
-                            type="button"
-                            aria-expanded="false">
-
-                            <span class="ikon">
-                                <i class="fa-solid fa-record-vinyl"></i>
-                            </span>
-
-                            <span class="nev">
-                                Hip-hop
-                            </span>
-
-                            <span class="chevron">
-                                <i class="fa-solid fa-chevron-down"></i>
-                            </span>
-
-                        </button>
-
-                        <div class="kartya-tartalom">
-
-                            <div class="kartya-blokk">
-
-                                <span class="blokk-cim">
-                                    Zenék
-                                </span>
-
-                                <div class="zenek">
-
-                                    <div class="zene">
-                                        <img
-                                            src="pics/a sicko.jpg"
-                                            alt="SICKO MODE borító">
-                                        <span>SICKO MODE</span>
-                                    </div>
-
-                                    <div class="zene">
-                                        <img
-                                            src="pics/a alright.jpg"
-                                            alt="Alright borító">
-                                        <span>Alright</span>
-                                    </div>
-
-                                    <div class="zene">
-                                        <img
-                                            src="pics/a juicy.jpg"
-                                            alt="Juicy borító">
-                                        <span>Juicy</span>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            <div class="kartya-blokk">
-
-                                <span class="blokk-cim">
-                                    Előadók
-                                </span>
-
-                                <div class="eloadok">
-
-                                    <div class="eloado">
-
-                                        <img
-                                            src="pics/travis.png"
-                                            alt="Travis Scott">
-
-                                        <span>
-                                            Travis Scott
-                                        </span>
-
-                                    </div>
-
-                                    <div class="eloado">
-
-                                        <img
-                                            src="pics/a kendrick.jpg"
-                                            alt="Kendrick Lamar">
-
-                                        <span>
-                                            Kendrick Lamar
-                                        </span>
-
-                                    </div>
-
-                                    <div class="eloado">
-
-                                        <img
-                                            src="pics/biggie.jpg"
-                                            alt="The Notorious B.I.G.">
-
-                                        <span>
-                                            The Notorious B.I.G.
-                                        </span>
-
-                                    </div>
+                                    <span>
+                                        Nina Simone
+                                    </span>
 
                                 </div>
 
@@ -390,323 +429,88 @@
 
                 </div>
 
-                <div class="oszlop">
+                <div class="hangulat-kartya kartya-rock">
 
-                    <div class="hangulat-kartya kartya-jazz">
+                    <button class="kartya-fejlec" type="button" aria-expanded="false">
 
-                        <button
-                            class="kartya-fejlec"
-                            type="button"
-                            aria-expanded="false">
+                        <span class="ikon">
+                            <i class="fa-solid fa-guitar"></i>
+                        </span>
 
-                            <span class="ikon">
-                                <i class="fa-solid fa-drum"></i>
+                        <span class="nev">
+                            Rock
+                        </span>
+
+                        <span class="chevron">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </span>
+
+                    </button>
+
+                    <div class="kartya-tartalom">
+
+                        <div class="kartya-blokk">
+
+                            <span class="blokk-cim">
+                                Zenék
                             </span>
 
-                            <span class="nev">
-                                Jazz
-                            </span>
+                            <div class="zenek">
 
-                            <span class="chevron">
-                                <i class="fa-solid fa-chevron-down"></i>
-                            </span>
-
-                        </button>
-
-                        <div class="kartya-tartalom">
-
-                            <div class="kartya-blokk">
-
-                                <span class="blokk-cim">
-                                    Zenék
-                                </span>
-
-                                <div class="zenek">
-
-                                    <div class="zene">
-                                        <img
-                                            src="pics/a take five.jpg"
-                                            alt="Take Five borító">
-                                        <span>Take Five</span>
-                                    </div>
-
-                                    <div class="zene">
-                                        <img
-                                            src="pics/a so what.jpg"
-                                            alt="So What borító">
-                                        <span>So What</span>
-                                    </div>
-
-                                    <div class="zene">
-                                        <img
-                                            src="pics/a feeling good.jpg"
-                                            alt="Feeling Good borító">
-                                        <span>Feeling Good</span>
-                                    </div>
-
+                                <div class="zene">
+                                    <img src="pics/a bohem raps.jpg" alt="Bohemian Rhapsody borító">
+                                    <span>Bohemian Rhapsody</span>
                                 </div>
 
-                            </div>
+                                <div class="zene">
+                                    <img src="pics/a smells like.jpg" alt="Smells Like Teen Spirit borító">
+                                    <span>Smells Like Teen Spirit</span>
+                                </div>
 
-                            <div class="kartya-blokk">
-
-                                <span class="blokk-cim">
-                                    Előadók
-                                </span>
-
-                                <div class="eloadok">
-
-                                    <div class="eloado">
-
-                                        <img
-                                            src="pics/a miles davis.jpg"
-                                            alt="Miles Davis">
-
-                                        <span>
-                                            Miles Davis
-                                        </span>
-
-                                    </div>
-
-                                    <div class="eloado">
-
-                                        <img
-                                            src="pics/john coltrane.png"
-                                            alt="John Coltrane">
-
-                                        <span>
-                                            John Coltrane
-                                        </span>
-
-                                    </div>
-
-                                    <div class="eloado">
-
-                                        <img
-                                            src="pics/a nina simone.jpg"
-                                            alt="Nina Simone">
-
-                                        <span>
-                                            Nina Simone
-                                        </span>
-
-                                    </div>
-
+                                <div class="zene">
+                                    <img src="pics/a sweet child.jpg" alt="Sweet Child O' Mine borító">
+                                    <span>Sweet Child O' Mine</span>
                                 </div>
 
                             </div>
 
                         </div>
 
-                    </div>
+                        <div class="kartya-blokk">
 
-                    <div class="hangulat-kartya kartya-rock">
-
-                        <button
-                            class="kartya-fejlec"
-                            type="button"
-                            aria-expanded="false">
-
-                            <span class="ikon">
-                                <i class="fa-solid fa-guitar"></i>
+                            <span class="blokk-cim">
+                                Előadók
                             </span>
 
-                            <span class="nev">
-                                Rock
-                            </span>
+                            <div class="eloadok">
 
-                            <span class="chevron">
-                                <i class="fa-solid fa-chevron-down"></i>
-                            </span>
+                                <div class="eloado">
 
-                        </button>
+                                    <img src="pics/a queen.jpg" alt="Queen">
 
-                        <div class="kartya-tartalom">
-
-                            <div class="kartya-blokk">
-
-                                <span class="blokk-cim">
-                                    Zenék
-                                </span>
-
-                                <div class="zenek">
-
-                                    <div class="zene">
-                                        <img
-                                            src="pics/a bohem raps.jpg"
-                                            alt="Bohemian Rhapsody borító">
-                                        <span>Bohemian Rhapsody</span>
-                                    </div>
-
-                                    <div class="zene">
-                                        <img
-                                            src="pics/a smells like.jpg"
-                                            alt="Smells Like Teen Spirit borító">
-                                        <span>Smells Like Teen Spirit</span>
-                                    </div>
-
-                                    <div class="zene">
-                                        <img
-                                            src="pics/a sweet child.jpg"
-                                            alt="Sweet Child O' Mine borító">
-                                        <span>Sweet Child O' Mine</span>
-                                    </div>
+                                    <span>
+                                        Queen
+                                    </span>
 
                                 </div>
 
-                            </div>
+                                <div class="eloado">
 
-                            <div class="kartya-blokk">
+                                    <img src="pics/a nirvana.jpg" alt="Nirvana">
 
-                                <span class="blokk-cim">
-                                    Előadók
-                                </span>
-
-                                <div class="eloadok">
-
-                                    <div class="eloado">
-
-                                        <img
-                                            src="pics/a queen.jpg"
-                                            alt="Queen">
-
-                                        <span>
-                                            Queen
-                                        </span>
-
-                                    </div>
-
-                                    <div class="eloado">
-
-                                        <img
-                                            src="pics/a nirvana.jpg"
-                                            alt="Nirvana">
-
-                                        <span>
-                                            Nirvana
-                                        </span>
-
-                                    </div>
-
-                                    <div class="eloado">
-
-                                        <img
-                                            src="pics/a guns n.jpg"
-                                            alt="Guns N' Roses">
-
-                                        <span>
-                                            Guns N' Roses
-                                        </span>
-
-                                    </div>
+                                    <span>
+                                        Nirvana
+                                    </span>
 
                                 </div>
 
-                            </div>
+                                <div class="eloado">
 
-                        </div>
+                                    <img src="pics/a guns n.jpg" alt="Guns N' Roses">
 
-                    </div>
-
-                    <div class="hangulat-kartya kartya-techno">
-
-                        <button
-                            class="kartya-fejlec"
-                            type="button"
-                            aria-expanded="false">
-
-                            <span class="ikon">
-                                <i class="fa-solid fa-compact-disc"></i>
-                            </span>
-
-                            <span class="nev">
-                                Techno
-                            </span>
-
-                            <span class="chevron">
-                                <i class="fa-solid fa-chevron-down"></i>
-                            </span>
-
-                        </button>
-
-                        <div class="kartya-tartalom">
-
-                            <div class="kartya-blokk">
-
-                                <span class="blokk-cim">
-                                    Zenék
-                                </span>
-
-                                <div class="zenek">
-
-                                    <div class="zene">
-                                        <img
-                                            src="pics/a strings of life.jpg"
-                                            alt="Strings of Life borító">
-                                        <span>Strings of Life</span>
-                                    </div>
-
-                                    <div class="zene">
-                                        <img
-                                            src="pics/a spastik.jpg"
-                                            alt="Spastik borító">
-                                        <span>Spastik</span>
-                                    </div>
-
-                                    <div class="zene">
-                                        <img
-                                            src="pics/a windowlicket.jpg"
-                                            alt="Windowlicker borító">
-                                        <span>Windowlicker</span>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            <div class="kartya-blokk">
-
-                                <span class="blokk-cim">
-                                    Előadók
-                                </span>
-
-                                <div class="eloadok">
-
-                                    <div class="eloado">
-
-                                        <img
-                                            src="pics/derrick may.png"
-                                            alt="Derrick May">
-
-                                        <span>
-                                            Derrick May
-                                        </span>
-
-                                    </div>
-
-                                    <div class="eloado">
-
-                                        <img
-                                            src="pics/a plastikman.jpg"
-                                            alt="Plastikman">
-
-                                        <span>
-                                            Plastikman
-                                        </span>
-
-                                    </div>
-
-                                    <div class="eloado">
-
-                                        <img
-                                            src="pics/aphex twin.jpg"
-                                            alt="Aphex Twin">
-
-                                        <span>
-                                            Aphex Twin
-                                        </span>
-
-                                    </div>
+                                    <span>
+                                        Guns N' Roses
+                                    </span>
 
                                 </div>
 
@@ -718,23 +522,122 @@
 
                 </div>
 
-            </section>
+                <div class="hangulat-kartya kartya-techno">
+
+                    <button class="kartya-fejlec" type="button" aria-expanded="false">
+
+                        <span class="ikon">
+                            <i class="fa-solid fa-compact-disc"></i>
+                        </span>
+
+                        <span class="nev">
+                            Techno
+                        </span>
+
+                        <span class="chevron">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </span>
+
+                    </button>
+
+                    <div class="kartya-tartalom">
+
+                        <div class="kartya-blokk">
+
+                            <span class="blokk-cim">
+                                Zenék
+                            </span>
+
+                            <div class="zenek">
+
+                                <div class="zene">
+                                    <img src="pics/a strings of life.jpg" alt="Strings of Life borító">
+                                    <span>Strings of Life</span>
+                                </div>
+
+                                <div class="zene">
+                                    <img src="pics/a spastik.jpg" alt="Spastik borító">
+                                    <span>Spastik</span>
+                                </div>
+
+                                <div class="zene">
+                                    <img src="pics/a windowlicket.jpg" alt="Windowlicker borító">
+                                    <span>Windowlicker</span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="kartya-blokk">
+
+                            <span class="blokk-cim">
+                                Előadók
+                            </span>
+
+                            <div class="eloadok">
+
+                                <div class="eloado">
+
+                                    <img src="pics/derrick may.png" alt="Derrick May">
+
+                                    <span>
+                                        Derrick May
+                                    </span>
+
+                                </div>
+
+                                <div class="eloado">
+
+                                    <img src="pics/a plastikman.jpg" alt="Plastikman">
+
+                                    <span>
+                                        Plastikman
+                                    </span>
+
+                                </div>
+
+                                <div class="eloado">
+
+                                    <img src="pics/aphex twin.jpg" alt="Aphex Twin">
+
+                                    <span>
+                                        Aphex Twin
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <div class="kep-eredet">
+        <p>A képek forrása: <a href="https://www.pinterest.com/" target="_blank">Pinterest</a></p>
+    </div>
+
+    <footer>
+
+        <div class="footer-content">
+
+            <p>
+            <p>&copy; 2026 Hangoló – Zenei hangulatok. All rights reserved.</p>
+            </p>
 
         </div>
 
-        <footer>
+    </footer>
 
-            <div class="footer-content">
-
-                <p>
-                    &copy; 2026 Zene. All rights reserved.
-                </p>
-
-            </div>
-
-        </footer>
-
-        <script>
+    <script>
 
         document
             .querySelectorAll('.kartya-fejlec')
@@ -759,6 +662,6 @@
 
     </script>
 
-    </body>
+</body>
 
 </html>
