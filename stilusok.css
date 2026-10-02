@@ -1,722 +1,55 @@
 :root {
     --bg: #0a0a0a;
     --ink: #0a0a0a;
-
     --yellow: #ffe600;
     --yellow-hover: #fff36b;
     --shade: #a08a00;
-
     --white: #f5f5f0;
-
+    --muted: rgba(245, 245, 240, .7);
+    --line: rgba(255, 230, 0, .28);
     --offset: 6px;
-    --logo: url("logo.png");
-
-    --display:
-        "Unbounded",
-        "Arial Black",
-        system-ui,
-        sans-serif;
-
-    --body:
-        "DM Sans",
-        "Segoe UI",
-        system-ui,
-        sans-serif;
+    --display: "Unbounded", "Arial Black", system-ui, sans-serif;
+    --body: "DM Sans", "Segoe UI", system-ui, sans-serif;
+    --logo: url("logo.png")
 }
 
 * {
-    box-sizing: border-box;
+    box-sizing: border-box
 }
 
 html {
     scroll-padding-top: 110px;
-    scroll-behavior: smooth;
+    scroll-behavior: smooth
 }
 
 body {
     margin: 0;
-
-    background-color: var(--bg);
-
-    background-image:
-        radial-gradient(rgba(255, 230, 0, 0.16) 1.5px,
-            transparent 1.6px);
-
-    background-size: 24px 24px;
-
-    color: white;
-
+    color: var(--white);
     font-family: var(--body);
+    line-height: 1.45;
+    overflow-x: hidden;
+    background: var(--bg) radial-gradient(rgba(255, 230, 0, .16) 1.5px, transparent 1.6px) 0 0/24px 24px;
+    animation: page-in .45s ease both;
+    transition: opacity .18s ease
 }
 
-
-
-
-.hangulatok-grid {
-    display: flex;
-
-    align-items: flex-start;
-
-    gap: 20px;
-
-    max-width: 1000px;
-
-    margin:
-        0 auto 40px auto;
-
-    padding:
-        0 10px;
+body.leaving {
+    opacity: 0
 }
 
-
-.oszlop {
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 20px;
-
-    flex: 1 1 0;
-
-    min-width: 0;
-}
-
-
-.hangulat-kartya {
-    position: relative;
-
-    width: 100%;
-
-    min-height: 82px;
-
-    box-sizing: border-box;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: flex-start;
-
-    overflow: hidden;
-
-    border-radius: 20px;
-
-    border:
-        1px solid rgba(255, 230, 0, 0.15);
-
-    background-color: #151515;
-
-    transition:
-        min-height 0.45s ease,
-        border-color 0.3s ease,
-        box-shadow 0.3s ease,
-        transform 0.3s ease;
-
-    isolation: isolate;
-}
-
-
-.hangulat-kartya::before {
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    z-index: -1;
-
-    background:
-        linear-gradient(90deg,
-            rgba(0, 0, 0, 0.88),
-            rgba(0, 0, 0, 0.65));
-
-    pointer-events: none;
-}
-
-.kartya-pop {
-    background-image:
-        url("images/pop.jpg");
-
-    background-size: cover;
-
-    background-position: center;
-}
-
-
-.kartya-rap {
-    background-image:
-        url("images/rap.jpg");
-
-    background-size: cover;
-
-    background-position: center;
-}
-
-
-.kartya-hiphop {
-    background-image:
-        url("images/hip-hop.jpg");
-
-    background-size: cover;
-
-    background-position: center;
-}
-
-
-.kartya-jazz {
-    background-image:
-        url("images/jazz.jpg");
-
-    background-size: cover;
-
-    background-position: center;
-}
-
-
-.kartya-rock {
-    background-image:
-        url("images/rock.jpg");
-
-    background-size: cover;
-
-    background-position: center;
-}
-
-
-.kartya-techno {
-    background-image:
-        url("images/techno.jpg");
-
-    background-size: cover;
-
-    background-position: center;
-}
-
-.hangulat-kartya:hover {
-    transform:
-        translateY(-2px);
-
-    border-color:
-        rgba(255, 230, 0, 0.45);
-
-    box-shadow:
-        0 10px 35px rgba(0, 0, 0, 0.4);
-}
-
-.hangulat-kartya.aktiv {
-    min-height: 330px;
-
-    border-color:
-        var(--yellow);
-
-    box-shadow:
-        0 0 30px rgba(255, 230, 0, 0.22),
-
-        0 15px 45px rgba(0, 0, 0, 0.5);
-}
-
-.kartya-fejlec {
-    position: relative;
-
-    z-index: 2;
-
-    width: 100%;
-
-    min-height: 82px;
-
-    box-sizing: border-box;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 14px;
-
-    background: transparent;
-
-    border: none;
-
-    padding:
-        18px 22px;
-
-    margin: 0;
-
-    cursor: pointer;
-
-    text-align: left;
-
-    color: white;
-}
-
-
-.kartya-fejlec .ikon {
-    width: 44px;
-
-    height: 44px;
-
-    flex-shrink: 0;
-
-    border-radius: 50%;
-
-    background:
-        rgba(0, 0, 0, 0.75);
-
-    color: var(--yellow);
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    font-size: 17px;
-
-    border:
-        1px solid rgba(255, 230, 0, 0.2);
-
-    box-shadow:
-        0 5px 15px rgba(0, 0, 0, 0.35);
-}
-
-
-.kartya-fejlec .nev {
-    flex: 1;
-
-    font-family: var(--body);
-
-    font-weight: 800;
-
-    font-size: 19px;
-
-    color: #fff;
-
-    text-shadow:
-        0 2px 5px rgba(0, 0, 0, 0.8);
-}
-
-
-.kartya-fejlec .chevron {
-    color: var(--yellow);
-
-    font-size: 14px;
-
-    transition:
-        transform 0.35s ease;
-}
-
-
-.hangulat-kartya.aktiv .chevron {
-    transform:
-        rotate(180deg);
-}
-
-.kartya-tartalom {
-    position: relative;
-
-    z-index: 2;
-
-    display: grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    gap: 35px;
-
-    width: 100%;
-
-    box-sizing: border-box;
-
-    padding:
-        0 22px 25px 80px;
-
-    opacity: 0;
-
-    transform:
-        translateY(-10px);
-
-    max-height: 0;
-
-    overflow: hidden;
-
-    pointer-events: none;
-
-    transition:
-        opacity 0.3s ease,
-        transform 0.4s ease,
-        max-height 0.45s ease;
-}
-
-
-.hangulat-kartya.aktiv .kartya-tartalom {
-    opacity: 1;
-
-    transform:
-        translateY(0);
-
-    max-height: 500px;
-
-    pointer-events: auto;
-}
-
-.kartya-blokk {
-    min-width: 0;
-
-    margin-bottom: 14px;
-}
-
-
-.blokk-cim {
-    display: block;
-
-    font-family: var(--body);
-
-    font-size: 12px;
-
-    font-weight: 700;
-
-    color: var(--yellow);
-
-    margin-bottom: 10px;
-
-    text-transform: uppercase;
-
-    letter-spacing: 0.5px;
-}
-
-.zenek {
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 12px;
-}
-
-
-.zene {
-    width: 115px;
-
-    overflow: hidden;
-
-    border-radius: 14px;
-
-    background:
-        rgba(0, 0, 0, 0.68);
-
-    border:
-        1px solid rgba(255, 230, 0, 0.3);
-
-    box-shadow:
-        0 5px 15px rgba(0, 0, 0, 0.25);
-
-    transition:
-        transform 0.25s ease,
-        border-color 0.25s ease,
-        box-shadow 0.25s ease;
-}
-
-
-.zene img {
-    width: 100%;
-
-    height: 105px;
-
-    display: block;
-
-    object-fit: cover;
-
-    object-position: center;
-}
-
-
-.zene span {
-    display: block;
-
-    min-height: 38px;
-
-    padding:
-        7px 5px;
-
-    color: var(--yellow);
-
-    font-family: var(--body);
-
-    font-size: 11px;
-
-    font-weight: 700;
-
-    line-height: 1.25;
-
-    text-align: center;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-}
-
-
-.zene:hover {
-    transform:
-        translateY(-4px) scale(1.02);
-
-    border-color:
-        var(--yellow);
-
-    box-shadow:
-        0 0 18px rgba(255, 230, 0, 0.22);
-}
-
-.eloadok {
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 12px;
-}
-
-.eloado {
-    width: 115px;
-
-    overflow: hidden;
-
-    border-radius: 14px;
-
-    background:
-        rgba(0, 0, 0, 0.68);
-
-    border:
-        1px solid rgba(255, 230, 0, 0.3);
-
-    box-shadow:
-        0 5px 15px rgba(0, 0, 0, 0.25);
-
-    transition:
-        transform 0.25s ease,
-        border-color 0.25s ease,
-        box-shadow 0.25s ease;
-}
-
-.eloado img {
-    width: 100%;
-
-    height: 105px;
-
-    display: block;
-
-    object-fit: cover;
-
-    object-position: center;
-}
-
-.eloado span {
-    display: block;
-
-    min-height: 38px;
-
-    padding:
-        7px 5px;
-
-    color: var(--yellow);
-
-    font-family: var(--body);
-
-    font-size: 11px;
-
-    font-weight: 700;
-
-    line-height: 1.25;
-
-    text-align: center;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-}
-
-.eloado:hover {
-    transform:
-        translateY(-4px) scale(1.02);
-
-    border-color:
-        var(--yellow);
-
-    box-shadow:
-        0 0 18px rgba(255, 230, 0, 0.22);
-}
-
-footer {
-    text-align: center;
-
-    padding:
-        5px 0;
-
-    font-size: 0.9em;
-
-    color: white;
-
-    background:
-        linear-gradient(160deg,
-            #1c1c1c 0%,
-            #101010 100%);
-
-    border-top:
-        1px solid #3d3d3d;
-
-    border-radius: 8px;
-
-    width: auto;
-
-    margin:
-        10px auto;
-
-    box-shadow:
-        0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-@media (max-width: 680px) {
-
-    nav {
-        padding:
-            12px 10px;
+@keyframes page-in {
+    from {
+        opacity: 0
     }
-
-
-    #menu {
-        gap: 15px;
-    }
-
-
-    .logo {
-        margin-left: auto;
-    }
-
-
-    .logo span {
-        font-size: 20px;
-    }
-
-
-    .logo img {
-        width: 52px;
-
-        height: 52px;
-    }
-
-
-    .banner {
-        padding:
-            45px 25px;
-
-        margin:
-            15px 0 30px 0;
-    }
-
-
-    .banner h1 {
-        font-size: 34px;
-    }
-
-
-    .banner .alcim {
-        font-size: 15px;
-    }
-
-
-    .hangulatok-grid {
-        flex-direction: column;
-
-        padding:
-            0 10px;
-    }
-
-
-    .hangulat-kartya {
-        min-height: 76px;
-    }
-
-
-    .hangulat-kartya.aktiv {
-        min-height: 500px;
-    }
-
-
-    .kartya-fejlec {
-        min-height: 76px;
-
-        padding: 16px;
-    }
-
-
-    .kartya-fejlec .ikon {
-        width: 40px;
-
-        height: 40px;
-    }
-
-
-    .kartya-fejlec .nev {
-        font-size: 16px;
-    }
-
-
-    .kartya-tartalom {
-        display: flex;
-
-        flex-direction: column;
-
-        gap: 20px;
-
-        padding:
-            0 16px 22px 16px;
-    }
-
-
-    .hangulat-kartya.aktiv .kartya-tartalom {
-        max-height: 700px;
-    }
-
-
-    .eloadok,
-    .zenek {
-        gap: 8px;
-    }
-
-
-    .eloado,
-    .zene {
-        width: 100px;
-    }
-
-
-    .eloado img,
-    .zene img {
-        height: 90px;
-    }
-
-
-    .eloado span,
-    .zene span {
-        font-size: 10.5px;
-    }
-
 }
 
-.kep-eredet {
-    text-align: center;
-    font-family: var(--body);
-    font-size: 13px;
-    color: #cfcfcf;
-    margin-bottom: 20px;
+.container {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 20px 22px
 }
 
-.kep-eredet a {
-    color: var(--yellow);
-    text-decoration: none;
-}
-
+/* top bar */
 .topbar {
     position: sticky;
     top: 0;
@@ -727,6 +60,9 @@ footer {
     gap: 16px;
     margin-bottom: 28px;
     padding: 16px 0;
+    background: rgba(10, 10, 10, .72);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px)
 }
 
 .menu {
@@ -735,7 +71,7 @@ footer {
     gap: 12px;
     margin: 0;
     padding: 0;
-    list-style: none;
+    list-style: none
 }
 
 .menu a {
@@ -745,33 +81,32 @@ footer {
     color: var(--white);
     border: 1px solid var(--yellow);
     border-radius: 14px;
-    font-size: 1rem;
     font-weight: 700;
     text-decoration: none;
-    transition: background-color 0.15s ease, color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+    transition: background-color .15s, color .15s, transform .15s, box-shadow .15s
 }
 
-.menu a {
-    position: relative;
+.menu a:hover,
+.menu a[aria-current] {
+    background: var(--yellow);
+    color: var(--ink)
 }
 
 .menu a:hover {
-    background: var(--yellow);
-    color: var(--ink);
     transform: translateY(-2px);
-    box-shadow: 0 4px 0 var(--shade);
+    box-shadow: 0 4px 0 var(--shade)
 }
 
 .menu a:active {
-    transform: translateY(0);
-    box-shadow: none;
+    transform: none;
+    box-shadow: none
 }
 
 .brand {
     display: flex;
     align-items: center;
     gap: 14px;
-    text-decoration: none;
+    text-decoration: none
 }
 
 .brand-name {
@@ -779,7 +114,7 @@ footer {
     font-family: var(--display);
     font-size: 1.15rem;
     font-weight: 800;
-    letter-spacing: -0.01em;
+    letter-spacing: -.01em
 }
 
 .logo-btn {
@@ -789,10 +124,10 @@ footer {
     flex: none;
     width: 60px;
     height: 60px;
-    background: radial-gradient(circle at 35% 30%, #2e2e2e 0%, #111 72%);
+    background: radial-gradient(circle at 35% 30%, #2e2e2e, #111 72%);
     border-radius: 50%;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.08);
-    transition: transform 0.2s ease;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .7), inset 0 1px 0 rgba(255, 255, 255, .08);
+    transition: transform .2s
 }
 
 .logo-btn::before {
@@ -800,77 +135,57 @@ footer {
     position: absolute;
     inset: -5px;
     border-radius: 50%;
-    border: 1.5px solid rgba(255, 230, 0, 0.55);
-    animation: pulse-ring 2.6s ease-out infinite;
+    border: 1.5px solid rgba(255, 230, 0, .55);
+    animation: pulse-ring 2.6s ease-out infinite
 }
 
 @keyframes pulse-ring {
     0% {
-        transform: scale(0.9);
-        opacity: 0.9;
+        transform: scale(.9);
+        opacity: .9
     }
 
-    70% {
-        transform: scale(1.35);
-        opacity: 0;
-    }
-
+    70%,
     100% {
         transform: scale(1.35);
-        opacity: 0;
+        opacity: 0
     }
 }
 
 .brand:hover .logo-btn {
-    transform: scale(1.06) rotate(-4deg);
+    transform: scale(1.06) rotate(-4deg)
 }
 
 .logo-img {
-    display: block;
     width: 30px;
     height: 25px;
-    background: var(--logo) center / contain no-repeat;
+    background: var(--logo) center/contain no-repeat
 }
 
 .menu a:focus-visible,
 .brand:focus-visible,
-summary:focus-visible {
+.hero-cta:focus-visible,
+.to-top:focus-visible {
     outline: 2px solid var(--white);
-    outline-offset: 3px;
+    outline-offset: 3px
 }
 
-@media (prefers-reduced-motion: reduce) {
-    .logo-btn::before {
-        animation: none;
-    }
-}
-
-
+/* hero */
 .hero {
     position: relative;
     overflow: hidden;
+    margin-bottom: 40px;
     padding: 56px 44px 60px;
     border: 1px solid var(--line);
     border-radius: 22px;
-    background:
-        linear-gradient(100deg, rgba(255, 230, 0, 0.3) 0%, rgba(255, 230, 0, 0.1) 45%, rgba(255, 230, 0, 0.03) 100%),
-        #0d0d0d;
+    background: linear-gradient(100deg, rgba(255, 230, 0, .3), rgba(255, 230, 0, .1) 45%, rgba(255, 230, 0, .03)), #0d0d0d;
     background-size: 220% 220%;
-    animation: hero-sheen 9s ease-in-out infinite;
-    margin-bottom: 40px;
+    animation: hero-sheen 9s ease-in-out infinite
 }
 
 @keyframes hero-sheen {
-    0% {
-        background-position: 0% 50%;
-    }
-
     50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
+        background-position: 100% 50%
     }
 }
 
@@ -881,49 +196,42 @@ summary:focus-visible {
     right: -40px;
     width: 300px;
     height: 246px;
-    background: var(--logo) center / contain no-repeat;
-    opacity: 0.13;
+    background: var(--logo) center/contain no-repeat;
+    opacity: .13;
     transform: translateY(-50%);
     pointer-events: none;
-    animation: float-logo 7s ease-in-out infinite;
+    animation: float-logo 7s ease-in-out infinite
 }
 
 @keyframes float-logo {
-
-    0%,
-    100% {
-        transform: translateY(-50%) rotate(0deg);
-    }
-
     50% {
-        transform: translateY(-56%) rotate(3deg);
+        transform: translateY(-56%) rotate(3deg)
     }
 }
 
+.hero>* {
+    position: relative
+}
+
 .hero h1 {
-    position: relative;
     margin: 0 0 14px;
     color: var(--yellow);
     font-family: var(--display);
     font-size: clamp(2rem, 4.6vw, 3.2rem);
     font-weight: 800;
-    letter-spacing: -0.03em;
+    letter-spacing: -.03em;
     line-height: 1.05;
-    text-shadow: 0 0 26px rgba(255, 230, 0, 0.35);
-    animation: title-in 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    text-shadow: 0 0 26px rgba(255, 230, 0, .35)
 }
 
 .hero p {
-    position: relative;
     margin: 0;
     max-width: 42ch;
-    color: rgba(245, 245, 240, 0.85);
-    font-size: 1.05rem;
-    animation: title-in 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.1s both;
+    color: rgba(245, 245, 240, .85);
+    font-size: 1.05rem
 }
 
 .hero-badge {
-    position: relative;
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -933,94 +241,507 @@ summary:focus-visible {
     color: var(--ink);
     border-radius: 999px;
     font-family: var(--display);
-    font-size: 0.85rem;
-    font-weight: 800;
-    animation: title-in 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    font-size: .85rem;
+    font-weight: 800
 }
 
 .hero-stats {
-    position: relative;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     margin: 24px 0 0;
     padding: 0;
-    list-style: none;
-    animation: title-in 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.16s both;
+    list-style: none
 }
 
 .hero-stats li {
     padding: 7px 16px;
-    border: 1px solid rgba(255, 230, 0, 0.4);
+    border: 1px solid rgba(255, 230, 0, .4);
     border-radius: 999px;
     color: var(--yellow);
-    font-size: 0.92rem;
-    font-weight: 700;
+    font-size: .92rem;
+    font-weight: 700
 }
 
 .hero-cta {
-    position: relative;
     display: inline-flex;
     align-items: center;
     gap: 10px;
     margin-top: 26px;
     padding: 13px 24px;
+    border: 0;
     background: var(--yellow);
     color: var(--ink);
     border-radius: 999px;
     text-decoration: none;
     font-family: var(--display);
-    font-size: 0.95rem;
+    font-size: .95rem;
     font-weight: 800;
     cursor: pointer;
     box-shadow: 0 var(--offset) 0 var(--shade);
-    transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
-    animation: title-in 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.22s both;
+    transition: transform .15s, box-shadow .15s, background-color .15s
 }
 
 .hero-cta:hover {
     background: var(--yellow-hover);
     transform: translate(-2px, -2px);
-    box-shadow: 0 calc(var(--offset) + 3px) 0 var(--shade);
+    box-shadow: 0 calc(var(--offset) + 3px) 0 var(--shade)
 }
 
 .hero-cta:active {
     transform: translate(0, 2px);
-    box-shadow: 0 calc(var(--offset) - 2px) 0 var(--shade);
+    box-shadow: 0 calc(var(--offset) - 2px) 0 var(--shade)
 }
 
-.hero-cta:focus-visible {
-    outline: 2px solid var(--white);
-    outline-offset: 3px;
+.hero-badge,
+.hero h1,
+.hero p,
+.hero-stats,
+.hero-cta {
+    animation: rise .6s cubic-bezier(.2, .8, .2, 1) both
 }
 
-@keyframes title-in {
+.hero h1 {
+    animation-delay: .05s
+}
+
+.hero p {
+    animation-delay: .1s
+}
+
+.hero-stats {
+    animation-delay: .16s
+}
+
+.hero-cta {
+    animation-delay: .22s
+}
+
+@keyframes rise {
     from {
         opacity: 0;
-        transform: translateY(10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
+        transform: translateY(12px)
     }
 }
 
-@media (prefers-reduced-motion: reduce) {
+/* footer + credits */
+.kep-eredet {
+    text-align: center;
+    font-size: 13px;
+    color: #cfcfcf;
+    margin-bottom: 20px
+}
 
-    .hero,
-    .hero::after,
-    .hero h1,
-    .hero p,
-    .hero-badge,
-    .hero-stats,
-    .hero-cta {
-        animation: none;
+.kep-eredet a {
+    color: var(--yellow);
+    text-decoration: none
+}
+
+footer {
+    margin: 10px auto;
+    padding: 10px 0;
+    text-align: center;
+    font-size: .9em;
+    color: #fff;
+    background: linear-gradient(160deg, #1c1c1c, #101010);
+    border-top: 1px solid #3d3d3d;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .3)
+}
+
+footer p {
+    margin: 0
+}
+
+/* extras: progress bar, back-to-top, scroll reveal, card spotlight */
+.progress {
+    position: fixed;
+    inset: 0 0 auto 0;
+    height: 3px;
+    z-index: 50;
+    background: var(--yellow);
+    transform: scaleX(0);
+    transform-origin: left;
+    box-shadow: 0 0 10px var(--yellow)
+}
+
+.to-top {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 30;
+    width: 46px;
+    height: 46px;
+    border: 1px solid var(--yellow);
+    border-radius: 50%;
+    background: #1c1c1c;
+    color: var(--yellow);
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(16px);
+    pointer-events: none;
+    transition: opacity .25s, transform .25s, background-color .15s, color .15s
+}
+
+.to-top.show {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto
+}
+
+.to-top:hover {
+    background: var(--yellow);
+    color: var(--ink)
+}
+
+.reveal {
+    opacity: 0
+}
+
+.reveal.in {
+    opacity: 1;
+    animation: rise .6s cubic-bezier(.2, .8, .2, 1) backwards
+}
+
+.spot::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity .3s;
+    background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%), rgba(255, 230, 0, .12), transparent 70%)
+}
+
+.spot:hover::after {
+    opacity: 1
+}
+
+@media(max-width:680px) {
+    .container {
+        padding: 14px
+    }
+
+    .topbar {
+        padding: 12px 0
+    }
+
+    .menu {
+        gap: 8px
+    }
+
+    .menu a {
+        padding: 8px 14px;
+        font-size: .95rem
+    }
+
+    .logo-btn {
+        width: 52px;
+        height: 52px
+    }
+
+    .logo-img {
+        width: 26px;
+        height: 21px
+    }
+
+    .brand-name {
+        font-size: 1rem
+    }
+
+    .hero {
+        padding: 36px 22px 40px
+    }
+
+    .hero::after {
+        width: 200px;
+        height: 164px;
+        right: -50px
     }
 }
 
-.container {
-    max-width: 1800px;
-    margin: 0 auto;
-    padding: 20px 22px;
+@media(prefers-reduced-motion:reduce) {
+
+    *,
+    ::before,
+    ::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important
+    }
+
+    .reveal {
+        opacity: 1
+    }
+}
+
+/* ---- oldal-specifikus ---- */
+.hangulatok-grid {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto 40px;
+    padding: 0 10px
+}
+
+.oszlop {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1 1 0;
+    min-width: 0
+}
+
+.hangulat-kartya {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 82px;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 230, 0, .15);
+    background: #151515 var(--img) center/cover;
+    transition: min-height .45s ease, border-color .3s, box-shadow .3s, transform .3s
+}
+
+.hangulat-kartya::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(90deg, rgba(0, 0, 0, .88), rgba(0, 0, 0, .65))
+}
+
+.kartya-pop {
+    --img: url("images/pop.jpg")
+}
+
+.kartya-rap {
+    --img: url("images/rap.jpg")
+}
+
+.kartya-hiphop {
+    --img: url("images/hip-hop.jpg")
+}
+
+.kartya-jazz {
+    --img: url("images/jazz.jpg")
+}
+
+.kartya-rock {
+    --img: url("images/rock.jpg")
+}
+
+.kartya-techno {
+    --img: url("images/techno.jpg")
+}
+
+.hangulat-kartya:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 230, 0, .45);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, .4)
+}
+
+.hangulat-kartya.aktiv {
+    min-height: 330px;
+    border-color: var(--yellow);
+    box-shadow: 0 0 30px rgba(255, 230, 0, .22), 0 15px 45px rgba(0, 0, 0, .5)
+}
+
+.kartya-fejlec {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    min-height: 82px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 22px;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    text-align: left;
+    color: #fff
+}
+
+.kartya-fejlec .ikon {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, .75);
+    color: var(--yellow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    border: 1px solid rgba(255, 230, 0, .2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .35)
+}
+
+.kartya-fejlec .nev {
+    flex: 1;
+    font-weight: 700;
+    font-size: 19px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, .8)
+}
+
+.chevron {
+    color: var(--yellow);
+    font-size: 14px;
+    transition: transform .35s
+}
+
+.aktiv .chevron {
+    transform: rotate(180deg)
+}
+
+.kartya-tartalom {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    padding: 0 22px 25px 80px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: opacity .3s, transform .4s, max-height .45s
+}
+
+.aktiv .kartya-tartalom {
+    max-height: 500px;
+    opacity: 1;
+    transform: none;
+    pointer-events: auto
+}
+
+.kartya-blokk {
+    min-width: 0;
+    margin-bottom: 14px
+}
+
+.blokk-cim {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--yellow);
+    text-transform: uppercase;
+    letter-spacing: .5px
+}
+
+.zenek,
+.eloadok {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px
+}
+
+.zene,
+.eloado {
+    width: 115px;
+    overflow: hidden;
+    border-radius: 14px;
+    background: rgba(0, 0, 0, .68);
+    border: 1px solid rgba(255, 230, 0, .3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .25);
+    transition: transform .25s, border-color .25s, box-shadow .25s
+}
+
+.zene img,
+.eloado img {
+    display: block;
+    width: 100%;
+    height: 105px;
+    object-fit: cover
+}
+
+.zene span,
+.eloado span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 38px;
+    padding: 7px 5px;
+    color: var(--yellow);
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.25;
+    text-align: center
+}
+
+.zene:hover,
+.eloado:hover {
+    transform: translateY(-4px) scale(1.02);
+    border-color: var(--yellow);
+    box-shadow: 0 0 18px rgba(255, 230, 0, .22)
+}
+
+@media(max-width:680px) {
+    .hangulatok-grid {
+        flex-direction: column;
+        align-items: stretch
+    }
+
+    .hangulat-kartya {
+        min-height: 76px
+    }
+
+    .hangulat-kartya.aktiv {
+        min-height: 500px
+    }
+
+    .kartya-fejlec {
+        min-height: 76px;
+        padding: 16px
+    }
+
+    .kartya-fejlec .ikon {
+        width: 40px;
+        height: 40px
+    }
+
+    .kartya-fejlec .nev {
+        font-size: 16px
+    }
+
+    .kartya-tartalom {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 0 16px 22px
+    }
+
+    .aktiv .kartya-tartalom {
+        max-height: 700px
+    }
+
+    .zenek,
+    .eloadok {
+        gap: 8px
+    }
+
+    .zene,
+    .eloado {
+        width: 100px
+    }
+
+    .zene img,
+    .eloado img {
+        height: 90px
+    }
+
+    .zene span,
+    .eloado span {
+        font-size: 10.5px
+    }
 }

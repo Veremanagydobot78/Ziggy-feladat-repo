@@ -4,32 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hangoló – Hangulatokból lejátszási lista</title>
+    <title>Táblázat – Hangoló</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Unbounded:wght@500;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Unbounded:wght@500;600;700;800&display=swap"
         rel="stylesheet">
+
     <link rel="stylesheet" href="tablazat.css">
 </head>
 
 <body>
-    <div class="wrap">
-
+    <div class="container">
         <nav class="topbar" aria-label="Főmenü">
             <ul class="menu">
                 <li><a href="hangulatok.html">Hangulatok</a></li>
                 <li><a href="stilusok.html">Stílusok</a></li>
                 <li><a href="tablazat.html">Táblázat</a></li>
             </ul>
-            <a class="brand" href="#" aria-label="Kezdőlap">
-                <span class="brand-name">Hangoló</span>
-                <span class="logo-btn"><span class="logo-img" aria-hidden="true"></span></span>
-            </a>
+            <a class="brand" href="#" aria-label="Kezdőlap"><span class="brand-name">Hangoló</span><span
+                    class="logo-btn"><span class="logo-img" aria-hidden="true"></span></span></a>
         </nav>
-
-        <header class="hero">
-            <span class="hero-badge"><span aria-hidden="true">🎧</span> Hangoló</span>
+        <header class="hero"><span class="hero-badge"><span aria-hidden="true">🎧</span> Hangoló</span>
             <h1>Zenei táblázat.</h1>
             <p>Válaszd ki a hangulatod, kattints rá a szalagon, és megkapod hozzá a stílust és a hallgatási helyzeteket.
             </p>
@@ -37,30 +33,22 @@
                 <li>🙂 6 hangulat</li>
                 <li>🎼 12 stílus</li>
                 <li>📍 13 helyzet</li>
-            </ul>
-            <a href="#" class="hero-cta" id="shuffle-btn"><span aria-hidden="true">🔀</span> Válassz nekem
+            </ul><a href="#" class="hero-cta" id="shuffle-btn"><span aria-hidden="true">🔀</span> Válassz nekem
                 hangulatot</a>
         </header>
-
         <nav class="ticker" aria-label="Ugrás egy hangulathoz">
-            <div class="ticker-track">
-                <a href="#row-nyugodt">🌊 Nyugodt</a><a href="#row-energikus">🔥 Energikus</a><a
-                    href="#row-nosztalgikus">📼 Nosztalgikus</a>
-                <a href="#row-melankolikus">🌧️ Melankolikus</a><a href="#row-vidam">🕺 Vidám</a><a
-                    href="#row-fokuszalt">🎯 Fókuszált</a>
-                <a href="#row-nyugodt" aria-hidden="true" tabindex="-1">🌊 Nyugodt</a><a href="#row-energikus"
-                    aria-hidden="true" tabindex="-1">🔥 Energikus</a><a href="#row-nosztalgikus" aria-hidden="true"
-                    tabindex="-1">📼 Nosztalgikus</a>
-                <a href="#row-melankolikus" aria-hidden="true" tabindex="-1">🌧️ Melankolikus</a><a href="#row-vidam"
-                    aria-hidden="true" tabindex="-1">🕺 Vidám</a><a href="#row-fokuszalt" aria-hidden="true"
-                    tabindex="-1">🎯 Fókuszált</a>
-            </div>
+            <div class="ticker-track"><a href="#row-nyugodt">🌊 Nyugodt</a><a href="#row-energikus">🔥 Energikus</a><a
+                    href="#row-nosztalgikus">📼 Nosztalgikus</a><a href="#row-melankolikus">🌧️ Melankolikus</a><a
+                    href="#row-vidam">🕺 Vidám</a><a href="#row-fokuszalt">🎯 Fókuszált</a><a href="#row-nyugodt"
+                    aria-hidden="true" tabindex="-1">🌊 Nyugodt</a><a href="#row-energikus" aria-hidden="true"
+                    tabindex="-1">🔥 Energikus</a><a href="#row-nosztalgikus" aria-hidden="true" tabindex="-1">📼
+                    Nosztalgikus</a><a href="#row-melankolikus" aria-hidden="true" tabindex="-1">🌧️ Melankolikus</a><a
+                    href="#row-vidam" aria-hidden="true" tabindex="-1">🕺 Vidám</a><a href="#row-fokuszalt"
+                    aria-hidden="true" tabindex="-1">🎯 Fókuszált</a></div>
         </nav>
-
         <main>
-
-            <section id="tablazat" aria-labelledby="h-tablazat">
-                <h2 id="h-tablazat">Táblázat</h2>
+            <section aria-labelledby="h-t">
+                <h2 id="h-t">Táblázat</h2>
                 <table>
                     <caption>Zenei ajánlások hangulat, stílus és hallgatási helyzet szerint</caption>
                     <thead>
@@ -178,29 +166,68 @@
                 </table>
             </section>
         </main>
-
-        <div class="kep-eredet">
-            <p>A képek forrása: <a href="https://www.pinterest.com/" target="_blank">Pinterest</a></p>
-        </div>
-
-        <footer><p>&copy; 2026 Hangoló – Zenei hangulatok. All rights reserved.</p></footer>
-
     </div>
+    <div class="kep-eredet">
+        <p>A képek forrása: <a href="https://www.pinterest.com/" target="_blank" rel="noopener">Pinterest</a></p>
+    </div>
+    <footer>
+        <p>&copy; 2026 Hangoló – Zenei hangulatok. All rights reserved.</p>
+    </footer>
     <script>
-        (function () {
-            var btn = document.getElementById('shuffle-btn');
-            var ids = ['row-nyugodt', 'row-energikus', 'row-nosztalgikus', 'row-melankolikus', 'row-vidam', 'row-fokuszalt'];
-            btn.addEventListener('click', function (e) {
-                e.preventDefault();
-                var current = location.hash.slice(1);
-                var choices = ids.filter(function (id) { return id !== current; });
-                var pick = choices[Math.floor(Math.random() * choices.length)];
-                if (location.hash === '#' + pick) {
-                    document.getElementById(pick).scrollIntoView({ behavior: 'smooth', block: 'start' });
-                } else {
-                    location.hash = pick;
-                }
+        (() => {
+            const $ = (s) => [...document.querySelectorAll(s)];
+            const closeCard = (c) => { c.classList.remove('aktiv'); c.querySelector('.kartya-fejlec').setAttribute('aria-expanded', 'false'); };
+
+            const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12 });
+            $('.hangulat-kartya, .lepes').forEach((el, i) => {
+                el.classList.add('reveal', 'spot');
+                el.style.animationDelay = (i % 3) * 80 + 'ms';
+                io.observe(el);
+                el.addEventListener('pointermove', (e) => {
+                    const r = el.getBoundingClientRect();
+                    el.style.setProperty('--mx', e.clientX - r.left + 'px');
+                    el.style.setProperty('--my', e.clientY - r.top + 'px');
+                });
             });
+
+
+            $('.kartya-fejlec').forEach((h) => h.addEventListener('click', () => {
+                const c = h.closest('.hangulat-kartya'), open = c.classList.toggle('aktiv');
+                h.setAttribute('aria-expanded', open);
+                if (open) { $('.hangulat-kartya.aktiv').filter((o) => o !== c).forEach(closeCard); setTimeout(() => c.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 420); }
+            }));
+            $('.eloado-fejlec').forEach((h) => h.addEventListener('click', () => h.setAttribute('aria-expanded', h.closest('.eloado').classList.toggle('aktiv'))));
+            addEventListener('keydown', (e) => { if (e.key === 'Escape') $('.hangulat-kartya.aktiv').forEach(closeCard); });
+
+
+            const rnd = document.getElementById('veletlen');
+            if (rnd) rnd.onclick = () => {
+                const k = $('.hangulat-kartya'), c = k[Math.random() * k.length | 0];
+                if (!c.classList.contains('aktiv')) c.querySelector('.kartya-fejlec').click();
+                c.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            };
+
+            const shuf = document.getElementById('shuffle-btn');
+            if (shuf) shuf.onclick = (e) => {
+                e.preventDefault();
+                const pool = $('tbody tr').filter((r) => r.id !== location.hash.slice(1)), r = pool[Math.random() * pool.length | 0];
+                history.replaceState(null, '', '#' + r.id);
+                r.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                r.classList.remove('flash'); void r.offsetWidth; r.classList.add('flash');
+            };
+
+
+            const here = location.pathname.split('/').pop() || 'hangulatok.html';
+            $('.menu a').forEach((a) => {
+                if (a.getAttribute('href') === here) a.setAttribute('aria-current', 'page');
+                a.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    if (a.hasAttribute('aria-current')) return;
+                    document.body.classList.add('leaving');
+                    setTimeout(() => (location.href = a.href), 180);
+                });
+            });
+            addEventListener('pageshow', () => document.body.classList.remove('leaving'));
         })();
     </script>
 </body>

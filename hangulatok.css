@@ -5,507 +5,51 @@
     --yellow-hover: #fff36b;
     --shade: #a08a00;
     --white: #f5f5f0;
+    --muted: rgba(245, 245, 240, .7);
+    --line: rgba(255, 230, 0, .28);
     --offset: 6px;
     --display: "Unbounded", "Arial Black", system-ui, sans-serif;
     --body: "DM Sans", "Segoe UI", system-ui, sans-serif;
-    --logo: url("logo.png");
+    --logo: url("logo.png")
 }
 
-body {
-    background-color: var(--bg);
-    background-image: radial-gradient(rgba(255, 230, 0, 0.16) 1.5px, transparent 1.6px);
-    background-size: 24px 24px;
+* {
+    box-sizing: border-box
 }
 
 html {
-  scroll-padding-top: 110px;
-  scroll-behavior: smooth;
+    scroll-padding-top: 110px;
+    scroll-behavior: smooth
 }
 
-tbody tr {
-    --c: var(--yellow);
+body {
+    margin: 0;
+    color: var(--white);
+    font-family: var(--body);
+    line-height: 1.45;
+    overflow-x: hidden;
+    background: var(--bg) radial-gradient(rgba(255, 230, 0, .16) 1.5px, transparent 1.6px) 0 0/24px 24px;
+    animation: page-in .45s ease both;
+    transition: opacity .18s ease
 }
 
-tbody th,
-tbody td {
-    background: var(--c);
+body.leaving {
+    opacity: 0
 }
 
-tbody tr:hover>* {
-    background: #fff36b;
-}
-
-
-@media (max-width: 680px) {
-    tbody tr {
-        background: var(--c);
-    }
-
-    tbody tr:hover {
-        background: #fff36b;
+@keyframes page-in {
+    from {
+        opacity: 0
     }
 }
 
 .container {
     max-width: 1800px;
-    margin: 10px auto 0 auto;
-    padding: 20px 22px;
+    margin: 0 auto;
+    padding: 20px 22px
 }
 
-.menu li {
-    font-family: var(--body);
-    font-weight: 700;
-}
-
-.hangulatok-grid {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 20px;
-    max-width: 1250px;
-    margin: 0 auto 40px auto;
-    padding: 0 10px;
-}
-
-.hangulat-kartya {
-    flex: 1 1 300px;
-    max-width: calc(33.333% - 14px);
-    background: linear-gradient(160deg, #1c1c1c 0%, #101010 100%);
-    border: 1px solid rgba(255, 230, 0, 0.15);
-    border-radius: 20px;
-    padding: 22px;
-    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-}
-
-.hangulat-kartya:hover {
-    transform: translateY(-4px);
-    border-color: rgba(255, 230, 0, 0.4);
-}
-
-.hangulat-kartya.aktiv {
-    border-color: var(--yellow);
-    box-shadow: 0 0 30px rgba(255, 230, 0, 0.22);
-}
-
-.kartya-fejlec {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    background: none;
-    border: none;
-    padding: 0;
-    margin: 0;
-    cursor: pointer;
-    text-align: left;
-}
-
-.kartya-fejlec .ikon {
-    width: 44px;
-    height: 44px;
-    flex-shrink: 0;
-    border-radius: 50%;
-    background: #000;
-    color: var(--yellow);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 17px;
-}
-
-.kartya-fejlec .nev {
-    flex: 1 1 auto;
-    font-family: var(--body);
-    font-weight: 800;
-    font-size: 19px;
-    color: #fff;
-}
-
-.kartya-fejlec .chevron {
-    color: var(--yellow);
-    font-size: 14px;
-    transition: transform 0.3s ease;
-}
-
-.hangulat-kartya.aktiv>.kartya-fejlec .chevron {
-    transform: rotate(180deg);
-}
-
-
-.kartya-tartalom {
-    display: grid;
-    grid-template-rows: 0fr;
-    overflow: hidden;
-    transition: grid-template-rows 0.4s ease, margin-top 0.4s ease;
-}
-
-.kartya-tartalom-belso {
-    overflow: hidden;
-    min-height: 0;
-}
-
-.hangulat-kartya.aktiv .kartya-tartalom {
-    grid-template-rows: 1fr;
-    margin-top: 20px;
-}
-
-.kartya-blokk {
-    margin-bottom: 14px;
-}
-
-.kartya-blokk:last-child {
-    margin-bottom: 0;
-}
-
-.blokk-cim {
-    display: block;
-    font-family: var(--body);
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--shade);
-    margin-bottom: 8px;
-}
-
-.tagek {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: rgba(255, 230, 0, 0.08);
-    border: 1px solid rgba(255, 230, 0, 0.3);
-    color: var(--yellow);
-    font-family: var(--body);
-    font-weight: 700;
-    font-size: 12.5px;
-    padding: 6px 12px;
-    border-radius: 20px;
-    white-space: nowrap;
-}
-
-.tag i {
-    font-size: 11px;
-}
-
-footer {
-    text-align: center;
-    padding: 5px 0;
-    font-size: 0.9em;
-    background: linear-gradient(160deg, #1c1c1c 0%, #101010 100%);
-    border-top: 1px solid #3d3d3d;
-    border-radius: 8px;
-    width: auto;
-    color: white;
-    margin: 10px auto 10px auto;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-@media (max-width: 900px) {
-    .hangulat-kartya {
-        max-width: calc(50% - 10px);
-    }
-}
-
-@media (max-width: 680px) {
-    .banner {
-        padding: 40px 24px;
-    }
-
-    .banner h1 {
-        font-size: 32px;
-    }
-
-    .banner-dekor {
-        font-size: 160px;
-    }
-
-    .hangulat-kartya {
-        max-width: 100%;
-    }
-}
-
-.hangulat-kartya .mondat {
-    font-family: var(--body);
-    font-size: 14px;
-    color: #cfcfcf;
-    margin-bottom: 12px;
-}
-
-.eloadok-lista {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-
-.eloado {
-    display: flex;
-    flex-direction: column;
-    border-radius: 12px;
-    background: rgba(255, 230, 0, 0.04);
-    transition: background 0.2s ease;
-    overflow: hidden;
-}
-
-.eloado:hover {
-    background: rgba(255, 230, 0, 0.1);
-}
-
-.eloado-sor {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 8px;
-}
-
-.eloado-fejlec {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    flex: 1 1 auto;
-    min-width: 0;
-    background: none;
-    border: none;
-    padding: 0;
-    margin: 0;
-    cursor: pointer;
-    text-align: left;
-}
-
-.eloado-fejlec img {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    border-radius: 10px;
-    flex-shrink: 0;
-}
-
-.eloado-nev {
-    flex: 1 1 auto;
-    font-family: var(--body);
-    font-size: 15px;
-    font-weight: 700;
-    color: #fff;
-}
-
-.eloado-fejlec .chevron {
-    color: var(--yellow);
-    font-size: 12px;
-    flex-shrink: 0;
-    transition: transform 0.3s ease;
-}
-
-.eloado.aktiv .eloado-fejlec .chevron {
-    transform: rotate(180deg);
-}
-
-.spotify-ikon {
-    flex-shrink: 0;
-    width: 34px;
-    height: 34px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: rgba(0, 0, 0, 0.4);
-    color: var(--yellow);
-    font-size: 15px;
-    text-decoration: none;
-    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
-}
-
-.spotify-ikon:hover {
-    background: var(--yellow);
-    color: #000;
-    transform: scale(1.08);
-}
-
-.eloado-tartalom {
-    display: grid;
-    grid-template-rows: 0fr;
-    overflow: hidden;
-    transition: grid-template-rows 0.3s ease;
-}
-
-.eloado-tartalom-belso {
-    overflow: hidden;
-    min-height: 0;
-}
-
-.eloado.aktiv .eloado-tartalom {
-    grid-template-rows: 1fr;
-}
-
-.zenek-lista {
-    display: flex;
-    flex-direction: column;
-    gap: 7px;
-    padding: 2px 14px 14px 78px;
-}
-
-.zene {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-family: var(--body);
-    font-size: 13.5px;
-    color: #cfcfcf;
-}
-
-.zene i {
-    color: var(--shade);
-    font-size: 10px;
-    flex-shrink: 0;
-}
-
-@media (max-width: 680px) {
-    .zenek-lista {
-        padding-left: 14px;
-    }
-}
-
-
-.banner-gomb {
-    margin-top: 24px;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: var(--yellow);
-    color: #0a0a0a;
-    border: 0;
-    border-radius: 30px;
-    padding: 12px 22px;
-    font-family: var(--body);
-    font-weight: 700;
-    font-size: 15px;
-    cursor: pointer;
-    transition: background 0.2s ease, transform 0.2s ease;
-}
-
-.banner-gomb:hover {
-    background: var(--yellow-hover);
-    transform: translateY(-2px);
-}
-
-.banner-gomb:focus-visible {
-    outline: 2px solid #fff;
-    outline-offset: 3px;
-}
-
-
-
-.kartya-blokk .tagek {
-    margin-bottom: 14px;
-}
-
-
-.lepesek {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    max-width: 1250px;
-    margin: 0 auto 40px auto;
-    padding: 0 10px;
-}
-
-.lepes {
-    flex: 1 1 300px;
-    max-width: calc(33.333% - 14px);
-    background: linear-gradient(160deg, #1c1c1c 0%, #101010 100%);
-    border: 1px solid rgba(255, 230, 0, 0.15);
-    border-radius: 20px;
-    padding: 24px;
-}
-
-.lepes .ikon {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: #000;
-    color: var(--yellow);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 17px;
-    margin-bottom: 16px;
-}
-
-.lepes h3 {
-    margin: 0 0 8px 0;
-    font-family: var(--body);
-    font-weight: 700;
-    font-size: 19px;
-    color: #fff;
-}
-
-.lepes p {
-    margin: 0;
-    font-family: var(--body);
-    font-size: 14.5px;
-    line-height: 1.6;
-    color: #cfcfcf;
-}
-
-@media (max-width: 900px) {
-    .lepes {
-        max-width: calc(50% - 10px);
-    }
-}
-
-@media (max-width: 680px) {
-    .lepes {
-        max-width: 100%;
-    }
-
-    .szekcio-cim {
-        font-size: 21px;
-    }
-
-    .marka-nev {
-        font-size: 19px;
-    }
-}
-
-.eloado-fejlec img {
-    background: #000;
-}
-
-.szekcio-bevezeto {
-    max-width: 1250px;
-    margin: 0 auto 8px auto;
-    padding: 0 10px;
-    font-family: var(--display);
-    font-weight: 700;
-    font-size: 34px;
-    line-height: 1.2;
-    color: #fff;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-@media (max-width: 680px) {
-    .szekcio-bevezeto {
-        font-size: 25px;
-    }
-}
-
-.kep-eredet {
-    text-align: center;
-    font-family: var(--body);
-    font-size: 13px;
-    color: #cfcfcf;
-    margin-bottom: 20px;
-}
-
-.kep-eredet a {
-    color: var(--yellow);
-    text-decoration: none;
-}
-
+/* top bar */
 .topbar {
     position: sticky;
     top: 0;
@@ -516,6 +60,9 @@ footer {
     gap: 16px;
     margin-bottom: 28px;
     padding: 16px 0;
+    background: rgba(10, 10, 10, .72);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px)
 }
 
 .menu {
@@ -524,7 +71,7 @@ footer {
     gap: 12px;
     margin: 0;
     padding: 0;
-    list-style: none;
+    list-style: none
 }
 
 .menu a {
@@ -534,33 +81,32 @@ footer {
     color: var(--white);
     border: 1px solid var(--yellow);
     border-radius: 14px;
-    font-size: 1rem;
+    font-weight: 700;
     text-decoration: none;
-    transition: background-color 0.15s ease, color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
-
+    transition: background-color .15s, color .15s, transform .15s, box-shadow .15s
 }
 
-.menu a {
-    position: relative;
+.menu a:hover,
+.menu a[aria-current] {
+    background: var(--yellow);
+    color: var(--ink)
 }
 
 .menu a:hover {
-    background: var(--yellow);
-    color: var(--ink);
     transform: translateY(-2px);
-    box-shadow: 0 4px 0 var(--shade);
+    box-shadow: 0 4px 0 var(--shade)
 }
 
 .menu a:active {
-    transform: translateY(0);
-    box-shadow: none;
+    transform: none;
+    box-shadow: none
 }
 
 .brand {
     display: flex;
     align-items: center;
     gap: 14px;
-    text-decoration: none;
+    text-decoration: none
 }
 
 .brand-name {
@@ -568,7 +114,7 @@ footer {
     font-family: var(--display);
     font-size: 1.15rem;
     font-weight: 800;
-    letter-spacing: -0.01em;
+    letter-spacing: -.01em
 }
 
 .logo-btn {
@@ -578,10 +124,10 @@ footer {
     flex: none;
     width: 60px;
     height: 60px;
-    background: radial-gradient(circle at 35% 30%, #2e2e2e 0%, #111 72%);
+    background: radial-gradient(circle at 35% 30%, #2e2e2e, #111 72%);
     border-radius: 50%;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.08);
-    transition: transform 0.2s ease;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .7), inset 0 1px 0 rgba(255, 255, 255, .08);
+    transition: transform .2s
 }
 
 .logo-btn::before {
@@ -589,77 +135,57 @@ footer {
     position: absolute;
     inset: -5px;
     border-radius: 50%;
-    border: 1.5px solid rgba(255, 230, 0, 0.55);
-    animation: pulse-ring 2.6s ease-out infinite;
+    border: 1.5px solid rgba(255, 230, 0, .55);
+    animation: pulse-ring 2.6s ease-out infinite
 }
 
 @keyframes pulse-ring {
     0% {
-        transform: scale(0.9);
-        opacity: 0.9;
+        transform: scale(.9);
+        opacity: .9
     }
 
-    70% {
-        transform: scale(1.35);
-        opacity: 0;
-    }
-
+    70%,
     100% {
         transform: scale(1.35);
-        opacity: 0;
+        opacity: 0
     }
 }
 
 .brand:hover .logo-btn {
-    transform: scale(1.06) rotate(-4deg);
+    transform: scale(1.06) rotate(-4deg)
 }
 
 .logo-img {
-    display: block;
     width: 30px;
     height: 25px;
-    background: var(--logo) center / contain no-repeat;
+    background: var(--logo) center/contain no-repeat
 }
 
 .menu a:focus-visible,
 .brand:focus-visible,
-summary:focus-visible {
+.hero-cta:focus-visible,
+.to-top:focus-visible {
     outline: 2px solid var(--white);
-    outline-offset: 3px;
+    outline-offset: 3px
 }
 
-@media (prefers-reduced-motion: reduce) {
-    .logo-btn::before {
-        animation: none;
-    }
-}
-
-
+/* hero */
 .hero {
     position: relative;
     overflow: hidden;
+    margin-bottom: 40px;
     padding: 56px 44px 60px;
     border: 1px solid var(--line);
     border-radius: 22px;
-    background:
-        linear-gradient(100deg, rgba(255, 230, 0, 0.3) 0%, rgba(255, 230, 0, 0.1) 45%, rgba(255, 230, 0, 0.03) 100%),
-        #0d0d0d;
+    background: linear-gradient(100deg, rgba(255, 230, 0, .3), rgba(255, 230, 0, .1) 45%, rgba(255, 230, 0, .03)), #0d0d0d;
     background-size: 220% 220%;
-    animation: hero-sheen 9s ease-in-out infinite;
-    margin-bottom: 40px;
+    animation: hero-sheen 9s ease-in-out infinite
 }
 
 @keyframes hero-sheen {
-    0% {
-        background-position: 0% 50%;
-    }
-
     50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
+        background-position: 100% 50%
     }
 }
 
@@ -670,49 +196,42 @@ summary:focus-visible {
     right: -40px;
     width: 300px;
     height: 246px;
-    background: var(--logo) center / contain no-repeat;
-    opacity: 0.13;
+    background: var(--logo) center/contain no-repeat;
+    opacity: .13;
     transform: translateY(-50%);
     pointer-events: none;
-    animation: float-logo 7s ease-in-out infinite;
+    animation: float-logo 7s ease-in-out infinite
 }
 
 @keyframes float-logo {
-
-    0%,
-    100% {
-        transform: translateY(-50%) rotate(0deg);
-    }
-
     50% {
-        transform: translateY(-56%) rotate(3deg);
+        transform: translateY(-56%) rotate(3deg)
     }
 }
 
+.hero>* {
+    position: relative
+}
+
 .hero h1 {
-    position: relative;
     margin: 0 0 14px;
     color: var(--yellow);
     font-family: var(--display);
     font-size: clamp(2rem, 4.6vw, 3.2rem);
     font-weight: 800;
-    letter-spacing: -0.03em;
+    letter-spacing: -.03em;
     line-height: 1.05;
-    text-shadow: 0 0 26px rgba(255, 230, 0, 0.35);
-    animation: title-in 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    text-shadow: 0 0 26px rgba(255, 230, 0, .35)
 }
 
 .hero p {
-    position: relative;
     margin: 0;
     max-width: 42ch;
-    color: rgba(245, 245, 240, 0.85);
-    font-size: 1.05rem;
-    animation: title-in 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.1s both;
+    color: rgba(245, 245, 240, .85);
+    font-size: 1.05rem
 }
 
 .hero-badge {
-    position: relative;
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -722,98 +241,551 @@ summary:focus-visible {
     color: var(--ink);
     border-radius: 999px;
     font-family: var(--display);
-    font-size: 0.85rem;
-    font-weight: 800;
-    animation: title-in 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    font-size: .85rem;
+    font-weight: 800
 }
 
 .hero-stats {
-    position: relative;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     margin: 24px 0 0;
     padding: 0;
-    list-style: none;
-    animation: title-in 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.16s both;
+    list-style: none
 }
 
 .hero-stats li {
     padding: 7px 16px;
-    border: 1px solid rgba(255, 230, 0, 0.4);
+    border: 1px solid rgba(255, 230, 0, .4);
     border-radius: 999px;
     color: var(--yellow);
-    font-size: 0.92rem;
-    font-weight: 700;
+    font-size: .92rem;
+    font-weight: 700
 }
 
 .hero-cta {
-    position: relative;
     display: inline-flex;
     align-items: center;
     gap: 10px;
     margin-top: 26px;
     padding: 13px 24px;
+    border: 0;
     background: var(--yellow);
     color: var(--ink);
     border-radius: 999px;
     text-decoration: none;
     font-family: var(--display);
-    font-size: 0.95rem;
+    font-size: .95rem;
     font-weight: 800;
     cursor: pointer;
     box-shadow: 0 var(--offset) 0 var(--shade);
-    transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
-    animation: title-in 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.22s both;
+    transition: transform .15s, box-shadow .15s, background-color .15s
 }
 
 .hero-cta:hover {
     background: var(--yellow-hover);
     transform: translate(-2px, -2px);
-    box-shadow: 0 calc(var(--offset) + 3px) 0 var(--shade);
+    box-shadow: 0 calc(var(--offset) + 3px) 0 var(--shade)
 }
 
 .hero-cta:active {
     transform: translate(0, 2px);
-    box-shadow: 0 calc(var(--offset) - 2px) 0 var(--shade);
+    box-shadow: 0 calc(var(--offset) - 2px) 0 var(--shade)
 }
 
-.hero-cta:focus-visible {
-    outline: 2px solid var(--white);
-    outline-offset: 3px;
+.hero-badge,
+.hero h1,
+.hero p,
+.hero-stats,
+.hero-cta {
+    animation: rise .6s cubic-bezier(.2, .8, .2, 1) both
 }
 
-@keyframes title-in {
+.hero h1 {
+    animation-delay: .05s
+}
+
+.hero p {
+    animation-delay: .1s
+}
+
+.hero-stats {
+    animation-delay: .16s
+}
+
+.hero-cta {
+    animation-delay: .22s
+}
+
+@keyframes rise {
     from {
         opacity: 0;
-        transform: translateY(10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
+        transform: translateY(12px)
     }
 }
 
-@media (prefers-reduced-motion: reduce) {
+/* footer + credits */
+.kep-eredet {
+    text-align: center;
+    font-size: 13px;
+    color: #cfcfcf;
+    margin-bottom: 20px
+}
 
-    .hero,
-    .hero::after,
-    .hero h1,
-    .hero p,
-    .hero-badge,
-    .hero-stats,
-    .hero-cta {
-        animation: none;
+.kep-eredet a {
+    color: var(--yellow);
+    text-decoration: none
+}
+
+footer {
+    margin: 10px auto;
+    padding: 10px 0;
+    text-align: center;
+    font-size: .9em;
+    color: #fff;
+    background: linear-gradient(160deg, #1c1c1c, #101010);
+    border-top: 1px solid #3d3d3d;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .3)
+}
+
+footer p {
+    margin: 0
+}
+
+/* extras: progress bar, back-to-top, scroll reveal, card spotlight */
+.progress {
+    position: fixed;
+    inset: 0 0 auto 0;
+    height: 3px;
+    z-index: 50;
+    background: var(--yellow);
+    transform: scaleX(0);
+    transform-origin: left;
+    box-shadow: 0 0 10px var(--yellow)
+}
+
+.to-top {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 30;
+    width: 46px;
+    height: 46px;
+    border: 1px solid var(--yellow);
+    border-radius: 50%;
+    background: #1c1c1c;
+    color: var(--yellow);
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(16px);
+    pointer-events: none;
+    transition: opacity .25s, transform .25s, background-color .15s, color .15s
+}
+
+.to-top.show {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto
+}
+
+.to-top:hover {
+    background: var(--yellow);
+    color: var(--ink)
+}
+
+.reveal {
+    opacity: 0
+}
+
+.reveal.in {
+    opacity: 1;
+    animation: rise .6s cubic-bezier(.2, .8, .2, 1) backwards
+}
+
+.spot::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity .3s;
+    background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%), rgba(255, 230, 0, .12), transparent 70%)
+}
+
+.spot:hover::after {
+    opacity: 1
+}
+
+@media(max-width:680px) {
+    .container {
+        padding: 14px
     }
+
+    .topbar {
+        padding: 12px 0
+    }
+
+    .menu {
+        gap: 8px
+    }
+
+    .menu a {
+        padding: 8px 14px;
+        font-size: .95rem
+    }
+
+    .logo-btn {
+        width: 52px;
+        height: 52px
+    }
+
+    .logo-img {
+        width: 26px;
+        height: 21px
+    }
+
+    .brand-name {
+        font-size: 1rem
+    }
+
+    .hero {
+        padding: 36px 22px 40px
+    }
+
+    .hero::after {
+        width: 200px;
+        height: 164px;
+        right: -50px
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+
+    *,
+    ::before,
+    ::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important
+    }
+
+    .reveal {
+        opacity: 1
+    }
+}
+
+/* ---- oldal-specifikus ---- */
+.hangulatok-grid,
+.lepesek {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 1250px;
+    margin: 0 auto 40px;
+    padding: 0 10px
+}
+
+.hangulat-kartya,
+.lepes {
+    position: relative;
+    flex: 1 1 300px;
+    max-width: calc(33.333% - 14px);
+    background: linear-gradient(160deg, #1c1c1c, #101010);
+    border: 1px solid rgba(255, 230, 0, .15);
+    border-radius: 20px
+}
+
+.hangulat-kartya {
+    padding: 22px;
+    transition: transform .25s, border-color .25s, box-shadow .25s
+}
+
+.hangulat-kartya:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 230, 0, .4)
+}
+
+.hangulat-kartya.aktiv {
+    border-color: var(--yellow);
+    box-shadow: 0 0 30px rgba(255, 230, 0, .22)
+}
+
+.kartya-fejlec {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    text-align: left
+}
+
+.kartya-fejlec .ikon,
+.lepes .ikon {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #000;
+    color: var(--yellow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px
+}
+
+.kartya-fejlec .nev {
+    flex: 1;
+    font-weight: 700;
+    font-size: 19px;
+    color: #fff
+}
+
+.chevron {
+    color: var(--yellow);
+    font-size: 14px;
+    transition: transform .3s
+}
+
+.aktiv>.kartya-fejlec .chevron,
+.eloado.aktiv .chevron {
+    transform: rotate(180deg)
+}
+
+.kartya-tartalom,
+.eloado-tartalom {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows .4s ease, margin-top .4s ease
+}
+
+.kartya-tartalom-belso,
+.eloado-tartalom-belso {
+    overflow: hidden;
+    min-height: 0
+}
+
+.hangulat-kartya.aktiv .kartya-tartalom {
+    grid-template-rows: 1fr;
+    margin-top: 20px
+}
+
+.eloado.aktiv .eloado-tartalom {
+    grid-template-rows: 1fr
+}
+
+.mondat {
+    font-size: 14px;
+    color: #cfcfcf;
+    margin-bottom: 12px
+}
+
+.blokk-cim {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--shade);
+    margin-bottom: 8px
+}
+
+.tagek {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px
+}
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 230, 0, .08);
+    border: 1px solid rgba(255, 230, 0, .3);
+    color: var(--yellow);
+    font-weight: 700;
+    font-size: 12.5px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    white-space: nowrap
+}
+
+.tag i {
+    font-size: 11px
+}
+
+.eloadok-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+}
+
+.eloado {
+    border-radius: 12px;
+    background: rgba(255, 230, 0, .04);
+    overflow: hidden;
+    transition: background .2s
+}
+
+.eloado:hover {
+    background: rgba(255, 230, 0, .1)
+}
+
+.eloado-sor {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px
+}
+
+.eloado-fejlec {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex: 1;
+    min-width: 0;
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    text-align: left
+}
+
+.eloado-fejlec img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 10px;
+    flex-shrink: 0;
+    background: #000
+}
+
+.eloado-nev {
+    flex: 1;
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff
+}
+
+.eloado-fejlec .chevron {
+    font-size: 12px
+}
+
+.spotify-ikon {
+    flex-shrink: 0;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, .4);
+    color: var(--yellow);
+    font-size: 15px;
+    text-decoration: none;
+    transition: background .2s, color .2s, transform .2s
+}
+
+.spotify-ikon:hover {
+    background: var(--yellow);
+    color: #000;
+    transform: scale(1.08)
+}
+
+.zenek-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding: 2px 14px 14px 78px
+}
+
+.zene {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13.5px;
+    color: #cfcfcf
+}
+
+.zene i {
+    color: var(--shade);
+    font-size: 10px
+}
+
+.szekcio-bevezeto {
+    max-width: 1250px;
+    margin: 0 auto 30px;
+    padding: 0 10px;
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 1.2;
+    color: #fff;
+    text-align: center
 }
 
 .szekcio-cim {
     max-width: 1250px;
-    margin: 0 auto 20px auto;
+    margin: 0 auto 20px;
     padding: 0 10px;
     font-family: var(--display);
     font-weight: 700;
     font-size: 26px;
-    color: var(--yellow);
+    color: var(--yellow)
+}
+
+.lepes {
+    padding: 24px
+}
+
+.lepes .ikon {
+    margin-bottom: 16px
+}
+
+.lepes h3 {
+    margin: 0 0 8px;
+    font-weight: 700;
+    font-size: 19px;
+    color: #fff
+}
+
+.lepes p {
+    margin: 0;
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: #cfcfcf
+}
+
+@media(max-width:900px) {
+
+    .hangulat-kartya,
+    .lepes {
+        max-width: calc(50% - 10px)
+    }
+}
+
+@media(max-width:680px) {
+
+    .hangulat-kartya,
+    .lepes {
+        max-width: 100%
+    }
+
+    .szekcio-bevezeto {
+        font-size: 25px
+    }
+
+    .szekcio-cim {
+        font-size: 21px
+    }
+
+    .zenek-lista {
+        padding-left: 14px
+    }
 }
